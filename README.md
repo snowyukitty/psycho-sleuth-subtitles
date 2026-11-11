@@ -23,7 +23,7 @@ English · 日本語 · 繁體中文 · 简体中文 — **6 pairs, 12 display o
 | 日本語 / 简体中文 | Either language on top |
 | 繁體中文 / 简体中文 | Either language on top |
 
-Extract the whole ZIP, close the game and pause Steam updates, then double-click **Install.cmd**. **Choose the top language, then the bottom language.** Keep the `_tool` folder alongside it. Run Install.cmd again to switch languages or reverse their order; **Restore.cmd** restores the original files. In the game, select Traditional Chinese or Japanese as the text language; either setting displays the selected pair.
+Extract the whole ZIP, close the game and pause Steam updates, then double-click **Install.cmd**. **Choose the top language, then the bottom language.** Keep the `_tool` folder alongside it. Run Install.cmd again to switch languages or reverse their order; **Restore.cmd** restores the original files. In the game, select Traditional Chinese or Japanese as the text language; either setting displays the selected pair for dialogue with both translations. See Preview status below for exceptions.
 
 四語任選兩種，上下順序自由選。四语言任选两种，上下顺序自由选择。4言語から2言語を選び、上下の順序も自由に指定できます。
 

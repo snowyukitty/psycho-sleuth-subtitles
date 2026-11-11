@@ -21,7 +21,7 @@ An unofficial **Windows x64 preview** that combines translations already install
 
 Any two different languages work: **6 pairs, 12 display orders**, including Traditional/Simplified Chinese. For example, **1 → 4** displays English above Simplified Chinese; **4 → 1** reverses them. Choosing the bottom language starts installation. On the first screen, **R** restores originals and **0** exits; on the second screen, **0** goes back. The old menu's number 4 now means Simplified Chinese, not restore.
 
-6. In the game, select **Traditional Chinese or Japanese** as the text language. Either setting displays the pair chosen in this tool.
+6. In the game, select **Traditional Chinese or Japanese** as the text language. Either setting displays the pair chosen in this tool for dialogue with both translations; see Scope below for exceptions.
 
 The first launch needs internet access to download about **12 MB** of official Python runtime. Its SHA-256 is checked before execution. You do not need to install Python, and your system Python is unchanged. The downloaded runtime is cached under `_tool` for later launches.
 
