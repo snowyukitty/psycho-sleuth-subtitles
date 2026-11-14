@@ -28,6 +28,6 @@ Never include or attach any of the following in issues, pull requests, screensho
 ## Pull Request Checklist
 
 - All modified `.svg` assets parse cleanly as XML with explicit `viewBox`, high contrast, and zero external `<image>` or `<script>` tags.
-- All relative links resolve cleanly and release links target explicit tags or `/releases` (never `/releases/latest`, because releases are pre-releases).
+- All relative links resolve cleanly and release links target explicit tags or `/releases` (no floating "latest release" redirect URL, because pre-releases are excluded from latest-release resolution).
 - Zero local filesystem paths, Steam IDs, or copyrighted game dumps appear anywhere in the diff.
 - Any canonical documentation change is reflected across the four player guides or clearly noted for translation sync.
