@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="304" viewBox="0 0 1200 304" role="img" aria-labelledby="title desc">
+  <title id="title">Psycho-Sleuth Dual Subtitles Patch Pipeline (dark)</title>
+  <desc id="desc">Four-stage transactional workflow: preflight verification, journaled backup, local asset merge preserving voice cells, and exact restore.</desc>
+  <rect x="1" y="1" width="1198" height="302" rx="18" fill="#0D1117" stroke="#30363D" stroke-width="2"/>
+  <text x="28" y="44" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="18" font-weight="800" fill="#F0F6FC">How the Safe Patch &amp; Restore Pipeline Works</text>
+  <text x="1172" y="44" text-anchor="end" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12.5" font-weight="600" fill="#8B949E">LOCAL-ONLY · FAIL-CLOSED · REVERSIBLE</text>
+  <rect x="28" y="74" width="264" height="198" rx="14" fill="#161B22" stroke="#30363D" stroke-width="1.5"/>
+  <rect x="28" y="74" width="264" height="6" rx="3" fill="#FB4D64"/>
+  <rect x="46" y="96" width="34" height="24" rx="6" fill="#FB4D64"/>
+  <text x="63" y="113" text-anchor="middle" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12.5" font-weight="800" fill="#FFFFFF">01</text>
+  <text x="90" y="114" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16" font-weight="800" fill="#F0F6FC">Preflight &amp; Lock</text>
+  <text x="46" y="158" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Verify supported-build.json</text>
+  <text x="46" y="181" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Check runtime &amp; asset hashes</text>
+  <text x="46" y="204" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Confirm game is closed; fetch</text>
+  <text x="46" y="227" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">SHA-256 Python 3.14.10 (~12 MB)</text>
+  <path d="M296 173H310M306 167L313 173L306 179" stroke="#8B949E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="318" y="74" width="264" height="198" rx="14" fill="#161B22" stroke="#30363D" stroke-width="1.5"/>
+  <rect x="318" y="74" width="264" height="6" rx="3" fill="#38BDF8"/>
+  <rect x="336" y="96" width="34" height="24" rx="6" fill="#38BDF8"/>
+  <text x="353" y="113" text-anchor="middle" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12.5" font-weight="800" fill="#FFFFFF">02</text>
+  <text x="380" y="114" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16" font-weight="800" fill="#F0F6FC">Journaled Backup</text>
+  <text x="336" y="158" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Save verified originals into</text>
+  <text x="336" y="181" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">.psycho-sleuth-subtitles/original</text>
+  <text x="336" y="204" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Write staged transaction journal</text>
+  <text x="336" y="227" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Reuse clean backups on switch</text>
+  <path d="M586 173H600M596 167L603 173L596 179" stroke="#8B949E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="608" y="74" width="264" height="198" rx="14" fill="#161B22" stroke="#30363D" stroke-width="1.5"/>
+  <rect x="608" y="74" width="264" height="6" rx="3" fill="#8B5CF6"/>
+  <rect x="626" y="96" width="34" height="24" rx="6" fill="#8B5CF6"/>
+  <text x="643" y="113" text-anchor="middle" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12.5" font-weight="800" fill="#FFFFFF">03</text>
+  <text x="670" y="114" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16" font-weight="800" fill="#F0F6FC">Script &amp; Video Merge</text>
+  <text x="626" y="158" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Patch story dialogue &amp; branching</text>
+  <text x="626" y="181" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">choices; align localized tables</text>
+  <text x="626" y="204" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Merge 22 .srt sets &amp; UI sizing</text>
+  <text x="626" y="227" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Preserve voice &amp; control cells</text>
+  <path d="M876 173H890M886 167L893 173L886 179" stroke="#8B949E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="898" y="74" width="264" height="198" rx="14" fill="#161B22" stroke="#30363D" stroke-width="1.5"/>
+  <rect x="898" y="74" width="264" height="6" rx="3" fill="#10B981"/>
+  <rect x="916" y="96" width="34" height="24" rx="6" fill="#10B981"/>
+  <text x="933" y="113" text-anchor="middle" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12.5" font-weight="800" fill="#FFFFFF">04</text>
+  <text x="960" y="114" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16" font-weight="800" fill="#F0F6FC">Switch or Restore</text>
+  <text x="916" y="158" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Commit SHA-256 receipt on success</text>
+  <text x="916" y="181" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Re-run Install.cmd to swap pair or</text>
+  <text x="916" y="204" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">reverse top/bottom order anytime</text>
+  <text x="916" y="227" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13.5" fill="#9CA3AF">Run Restore.cmd for byte-exact exit</text>
+</svg>

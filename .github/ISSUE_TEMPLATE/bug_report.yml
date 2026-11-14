@@ -1,0 +1,51 @@
+name: Bug or Layout Report
+description: Report an installer error, subtitle formatting issue, or documentation mistake.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please read [SUPPORT.md](https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/SUPPORT.md) first.
+        **Important:** Never attach game files (`.assets`, `.bundle`, `.resS`, game DLLs), full script dumps, Steam IDs, or personal folder paths.
+  - type: input
+    id: version
+    attributes:
+      label: Tool release version
+      description: Version shown in the ZIP filename or console banner.
+      placeholder: e.g. v0.2.0-preview.1
+    validations:
+      required: true
+  - type: input
+    id: pair
+    attributes:
+      label: Selected subtitle pair & order (top → bottom)
+      description: Mention the language order and how you ran Install.cmd.
+      placeholder: e.g. 1 → 2 (en-ja) or --pair ja-zh-Hant
+    validations:
+      required: true
+  - type: dropdown
+    id: game_lang
+    attributes:
+      label: In-game text language setting
+      options:
+        - Traditional Chinese (繁體中文)
+        - Japanese (日本語)
+        - English
+        - Simplified Chinese (简体中文)
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the error message or subtitle display issue cleanly. Do not paste full dialogue dumps or private paths.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Safety check
+      options:
+        - label: I confirmed no game binaries, full script dumps, or personal paths are attached.
+          required: true

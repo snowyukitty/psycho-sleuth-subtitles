@@ -1,0 +1,12 @@
+name: Feature or Documentation Request
+description: Suggest an improvement to user guides, language clarity, or tooling ergonomics.
+title: "[Suggestion] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What improvement would help players?
+      description: Describe the use case clearly.
+    validations:
+      required: true

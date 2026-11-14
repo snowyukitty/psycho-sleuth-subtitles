@@ -1,0 +1,128 @@
+name: Documentation & Asset Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate YAML & Issue Form schemas
+        run: |
+          ruby -ryaml -e '
+            Dir.glob(".github/**/*.yml").sort.each do |path|
+              data = YAML.safe_load_file(path)
+              raise "Expected mapping in #{path}" unless data.is_a?(Hash)
+              if path.start_with?(".github/ISSUE_TEMPLATE/") && File.basename(path) != "config.yml"
+                raise "Missing form name/description/body in #{path}" unless data["name"].is_a?(String) && data["description"].is_a?(String) && data["body"].is_a?(Array) && !data["body"].empty?
+                ids = data["body"].filter_map { |item| item["id"] }
+                raise "Duplicate field ids in #{path}" unless ids.uniq.length == ids.length
+              elsif File.basename(path) == "dependabot.yml"
+                raise "Invalid dependabot.yml" unless data["version"] == 2 && data["updates"].is_a?(Array) && !data["updates"].empty?
+              end
+              puts "YAML OK: #{path}"
+            end
+          '
+
+      - name: Validate SVGs, Markdown links & references, asset hashes, and privacy boundaries
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import re
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          from urllib.parse import unquote
+
+          root = Path(".")
+          svgs = sorted(root.rglob("*.svg"))
+          assert svgs, "Expected at least one SVG asset"
+          svg_hashes = {}
+          for svg in svgs:
+              text = svg.read_text(encoding="utf-8")
+              elem = ET.fromstring(text)
+              assert elem.attrib.get("viewBox"), f"Missing viewBox: {svg}"
+              lower = text.lower()
+              assert "<script" not in lower, f"Disallowed <script> in {svg}"
+              assert "foreignobject" not in lower, f"Disallowed foreignObject in {svg}"
+              assert "@import" not in lower, f"Disallowed CSS @import in {svg}"
+              assert not elem.findall(".//{*}image"), f"Disallowed <image> in {svg}"
+              assert not re.search(r'(?:href|src)\s*=\s*["\']https?://', lower), f"External link in {svg}"
+              assert not re.search(r'url\s*\(\s*["\']?https?:', lower), f"External url() in {svg}"
+              svg_hashes[svg.resolve()] = hashlib.sha256(svg.read_bytes()).hexdigest()[:16]
+              print(f"SVG OK: {svg}")
+
+          leak_patterns = [
+              re.compile(r"(?<![A-Za-z0-9_])[A-Za-z]:[\\/]"),
+              re.compile(r"(?<![A-Za-z0-9_])/(?:Users|home)/[^\s\"'<>]+"),
+              re.compile(r"\\\\[A-Za-z0-9._-]+\\[^\s\"'<>]+"),
+              re.compile(r"%(?:USERPROFILE|USERNAME)%", re.IGNORECASE),
+              re.compile(r"\b7656119\d{10}\b"),
+              re.compile(r"\bsteamid(?:64)?\b\s*[:=]\s*\d+", re.IGNORECASE),
+              re.compile(r"\b(?:ghp_|github_pat_|gho_|ghu_|sk-ant-|AIza)[A-Za-z0-9_-]{20,}"),
+          ]
+          text_exts = {".md", ".svg", ".yml", ".yaml", ".json", ".txt"}
+          for path in sorted(root.rglob("*")):
+              if not path.is_file() or ".git" in path.parts:
+                  continue
+              if path.suffix.lower() not in text_exts and path.name != "LICENSE":
+                  continue
+              body = path.read_text(encoding="utf-8")
+              for pat in leak_patterns:
+                  m = pat.search(body)
+                  assert not m, f"Disallowed leak pattern {m.group(0)!r} in {path}"
+
+          link_re = re.compile(r'\[[^\]]*\]\(([^)]+)\)|(?:src|srcset|href)\s*=\s*["\']([^"\']+)["\']')
+          ref_re = re.compile(r"^\s*\[[^\]]+\]:\s*<?([^\s>]+)>?", re.MULTILINE)
+          repo_prefix = "https://github.com/snowyukitty/psycho-sleuth-subtitles/"
+          md_files = sorted(root.rglob("*.md"))
+          for md in md_files:
+              body = md.read_text(encoding="utf-8")
+              assert "/releases/latest" not in body.lower(), f"Disallowed /releases/latest reference in {md}"
+              targets = [m.group(1) or m.group(2) for m in link_re.finditer(body)]
+              targets.extend(m.group(1) for m in ref_re.finditer(body))
+              for cand in targets:
+                  tokens = cand.strip().split()
+                  if not tokens:
+                      continue
+                  raw = tokens[0]
+                  assert "/releases/latest" not in raw.lower(), f"Disallowed /releases/latest link {raw!r} in {md}"
+                  if raw.startswith(repo_prefix):
+                      sub = raw[len(repo_prefix):]
+                      if sub.startswith(("blob/main/", "tree/main/")):
+                          repo_rel = unquote(sub.split("/", 2)[2].split("#", 1)[0].split("?", 1)[0])
+                          if repo_rel:
+                              assert (root / repo_rel).exists(), f"Broken GitHub repo link {raw!r} in {md}"
+                      elif sub.startswith("issues/new?") and "template=" in sub:
+                          tpl = sub.split("template=", 1)[1].split("&", 1)[0].split("#", 1)[0]
+                          assert (root / ".github" / "ISSUE_TEMPLATE" / unquote(tpl)).is_file(), f"Missing issue template {tpl!r} referenced in {md}"
+                      continue
+                  if raw.startswith(("http://", "https://", "#", "mailto:")):
+                      continue
+                  path_part, _, query_and_frag = raw.partition("?")
+                  query_part = query_and_frag.split("#", 1)[0]
+                  rel = unquote(path_part.split("#", 1)[0])
+                  if not rel:
+                      continue
+                  target = (md.parent / rel).resolve()
+                  assert target.exists(), f"Broken relative link {raw!r} in {md} -> {target}"
+                  if query_part.startswith("v=") and target in svg_hashes:
+                      actual_v = query_part.split("=", 1)[1]
+                      expected_v = svg_hashes[target]
+                      assert actual_v == expected_v, f"Stale ?v= cache-buster {actual_v!r} for {rel} in {md} (expected {expected_v!r})"
+              print(f"MD OK: {md}")
+          PY

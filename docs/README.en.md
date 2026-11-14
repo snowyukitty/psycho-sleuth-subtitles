@@ -2,14 +2,15 @@
 
 [English](README.en.md) · [日本語](README.ja.md) · [繁體中文](README.zh-Hant.md) · [简体中文](README.zh-Hans.md)
 
-An unofficial **Windows x64 preview** that combines translations already installed with the game. No added voices, API key or game-text upload. The package contains no game assets or full dialogue script.
+An unofficial **Windows x64 preview** that combines translations already installed with your copy of *Psycho-Sleuth*. No added voices, API keys, or game-text uploads. This package contains no copyrighted game assets or full dialogue scripts.
 
 ## Install
 
-1. Download **Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip** from the [Release page](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1).
-2. Extract the whole ZIP into a writable folder. Keep the `_tool` folder and its contents together with the launchers.
-3. Close the game and pause Steam updates. Double-click **Install.cmd**.
-4. The tool normally finds your Steam game automatically. If prompted, paste the game folder path. The game folder must be writable.
+1. Download **Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip** from the [`v0.2.0-preview.1` release](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1).
+   *(Optional checksum check in PowerShell: `Get-FileHash .\Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip` and compare against `SHA256SUMS.txt`.)*
+2. Extract the entire ZIP into a writable folder. Keep the `_tool` folder and its contents together with `Install.cmd` and `Restore.cmd`.
+3. Close *Psycho-Sleuth* completely and pause Steam auto-updates. Double-click **Install.cmd**.
+4. The installer detects Steam libraries automatically. If prompted, paste the writable game folder path.
 5. Choose the **top** language, then the **bottom** language. Numbers stay the same on both screens; the second screen excludes your first choice.
 
 | Number | Language |
@@ -19,30 +20,46 @@ An unofficial **Windows x64 preview** that combines translations already install
 | 3 | 繁體中文 — Traditional Chinese |
 | 4 | 简体中文 — Simplified Chinese |
 
-Any two different languages work: **6 pairs, 12 display orders**, including Traditional/Simplified Chinese. For example, **1 → 4** displays English above Simplified Chinese; **4 → 1** reverses them. Choosing the bottom language starts installation. On the first screen, **R** restores originals and **0** exits; on the second screen, **0** goes back. The old menu's number 4 now means Simplified Chinese, not restore.
+Any two different languages work: **6 pairs, 12 display orders**, including Traditional/Simplified Chinese. For example, **1 → 4** displays English above Simplified Chinese; **4 → 1** reverses them. Choosing the bottom language starts installation. On the first screen, **R** restores originals and **0** exits; on the second screen, **0** goes back. *(In 0.2.0-preview.1, number 4 is Simplified Chinese, not restore.)*
 
-6. In the game, select **Traditional Chinese or Japanese** as the text language. Either setting displays the pair chosen in this tool for dialogue with both translations; see Scope below for exceptions.
+6. In the game, select **Traditional Chinese** or **Japanese** as the text language. Either setting displays the pair chosen in this tool for dialogue with both translations; see Scope below for exceptions.
 
-The first launch needs internet access to download about **12 MB** of official Python runtime. Its SHA-256 is checked before execution. You do not need to install Python, and your system Python is unchanged. The downloaded runtime is cached under `_tool` for later launches.
+The first launch needs internet access to download about **12 MB** of the official Python 3.14.10 embeddable runtime from `python.org`. Its SHA-256 checksum is verified before saving `_tool\python-runtime.zip` locally for reuse, and each launch verifies that cache again before unpacking into a clean temporary runtime folder under `%TEMP%` (removed automatically on exit). You do not need to install Python, and any existing system Python stays untouched.
 
-## Switch or restore
+### Optional Command-Line Flags
 
-Close the game, then run Install.cmd again to switch pairs. Double-click **Restore.cmd** to restore the exact original files. Backups are kept in `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original`; retain them until restoration is complete. If installation is interrupted, rerun Install or Restore and finish recovery before launching the game.
+You can also open PowerShell or Command Prompt **inside the extracted folder** and pass arguments directly to `Install.cmd` or `Restore.cmd`:
 
-**Upgrading from 0.1.0-preview.1:** extract the new ZIP into a separate folder and run its Install.cmd. A recognized installation reuses the verified original backups; no manual restoration is needed. Keep the game's `.psycho-sleuth-subtitles` folder. Compatibility checks still apply if Steam or another tool changed files.
+- `.\Install.cmd --pair en-ja` — install without prompts using a named pair (`top-bottom`)
+- `.\Install.cmd --top ja --bottom zh-Hant` — choose top and bottom explicitly (`en`, `ja`, `zh-Hant`, `zh-Hans`)
+- `.\Install.cmd --list-pairs` — print all 12 supported orders
+- `.\Restore.cmd` — immediately restore exact original files
 
-After a Steam update, **do not copy old backups over new game files**. Unknown versions and other mods are refused. If recovery is refused, complete Steam's **Verify integrity of game files** first. Then move `.psycho-sleuth-subtitles` outside the game folder for safekeeping and wait for a compatible tool release.
+## Switch, Upgrade, or Restore
 
-## Scope and preview limitations
+Close the game, then re-run **Install.cmd** anytime to switch languages or reverse top/bottom order. Double-click **Restore.cmd** to restore the exact original files byte-for-byte. Verified backups are kept in `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original`; retain `.psycho-sleuth-subtitles` until restoration is complete. If an installation is interrupted, re-run Install or Restore to finish recovery before launching the game.
 
-- Includes story dialogue, scenario choices and cutscene subtitles. Menus, names and clue UI retain the game's selected language.
-- Most subtitles use two lines; a few dense pages use inline pairs in the same selected order to preserve the original click timing. Identical source strings appear once.
-- The original Traditional Chinese prologue subtitle is missing. Pairs containing Traditional Chinese show only the other selected language there, including Simplified Chinese if selected. Different source timing can also briefly display one language alone. Dialogue rows without both selected translations are left untouched: if encountered in play, they retain the game's current text language (which can be blank), rather than displaying the chosen pair.
-- Traditional and Simplified Chinese use the game's **separate original translations**; no automatic character conversion is used.
-- Supported clean game files or recognized installations of this tool only. All 12 orders pass isolated data checks, but in-game visual qualification of long lines, choices, fonts and cutscenes is still pending. English and Simplified Chinese game-UI font settings are not yet visually qualified; use the recommended game text settings above.
+**Upgrading from 0.1.0-preview.1:** extract the new ZIP into a separate folder and run its `Install.cmd`. A recognized installation reuses the verified original backups automatically—no manual restoration needed. Keep `.psycho-sleuth-subtitles` intact inside the game folder. Compatibility checks still verify files if Steam or another tool modified them.
+
+**After a Steam update:** **never copy old backups over new game files**. Unknown builds and third-party mods are refused safely. If recovery is refused after a Steam patch, run Steam's **Verify integrity of game files** first, move `.psycho-sleuth-subtitles` outside the game folder for safekeeping, and wait for a compatible tool release.
+
+## Troubleshooting
+
+- **Installer says the game is still running:** Close *Psycho-Sleuth* from Steam or Task Manager and try again.
+- **First launch fails downloading Python runtime:** Check firewall/antivirus access to `python.org` (`~12 MB`) and re-run `Install.cmd`. The downloader validates the exact pinned SHA-256 before running anything.
+- **Only one language appears on a line or prologue scene:** The built-in game files miss Traditional Chinese in the prologue cutscene and a few untranslated dialogue rows (see Scope below).
+- **Need more help?** See [SUPPORT.md](https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/SUPPORT.md) or open an issue on [GitHub Issues](https://github.com/snowyukitty/psycho-sleuth-subtitles/issues).
+
+## Scope and Preview Limitations
+
+- Includes story dialogue, scenario choices, and 22 cutscene `.srt` subtitle sets. Menus, character names, and clue UI retain the game's selected text language.
+- Most dialogue boxes stack lines vertically (top above bottom); a small set of dense pages use inline pairing in the same order to preserve original click timing. Identical source strings appear once.
+- The original Traditional Chinese prologue subtitle is missing, so pairs containing it display only the other chosen language there (`简体中文` if paired with it). Different cutscene timing can briefly show one language alone. Dialogue rows missing either selected translation remain unchanged in the game's current text language (which can be blank).
+- Traditional and Simplified Chinese use the game's **separate built-in translations**; no automatic character conversion is performed.
+- Only supported clean Steam files or recognized tool installations are accepted. All 12 orders pass automated isolated-data checks (including voice and non-subtitle object preservation), while full in-game visual qualification of long lines, choices, English/Simplified Chinese UI fonts, and cutscenes remains pending.
 
 ## Terms
 
-Free download and use under the included **LICENSE.txt**; other rights are reserved. Share the official download link. The required runtime scripts are readable; this is not an encrypted executable. The tool is unaffiliated with the game's creators, and its terms grant no rights to game content. A legitimately installed game is required.
+Free download and personal installation/backup use under the included **LICENSE.txt**; other rights are reserved. Share links to the [official release page](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases) rather than re-uploading archives. Readable scripts only—not an encrypted executable. Unaffiliated with the game's creators; grants no rights to game assets or scripts. A legitimately installed copy of *Psycho-Sleuth* is required.
 
-Python retains its own license, included in the downloaded official ZIP. [Runtime release and checksum](https://www.python.org/downloads/release/python-31410/).
+Official Python retains its own license included in the downloaded runtime archive. [Python 3.14.10 release and checksum](https://www.python.org/downloads/release/python-31410/).

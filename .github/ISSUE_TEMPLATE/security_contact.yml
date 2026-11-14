@@ -1,0 +1,34 @@
+name: Security or CoC Contact Request (Public Request Only)
+description: Ask a maintainer for a private contact channel without posting exploit details, local paths, or harassment quotes publicly.
+title: "[Contact Request] Requesting private channel"
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If **GitHub Private Vulnerability Reporting** is available under the repository **Security** tab, use that first for security vulnerabilities.
+
+        **Warning: submitting this form creates a PUBLIC GitHub issue.** Use it **only to ask for an off-issue contact channel**. **Never include exploit steps, tokens, personal local paths, game files, or verbatim harassment quotes here.**
+  - type: dropdown
+    id: category
+    attributes:
+      label: Topic category
+      options:
+        - Security / installer verification / runtime integrity
+        - Code of Conduct report
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: High-level component affected (no sensitive details)
+      description: Briefly name the component (e.g. launcher script, backup check) so a maintainer can respond with a private contact method.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Privacy & safety confirmation
+      options:
+        - label: I confirm this post contains zero exploit details, tokens, private paths, game files, or abusive quotes.
+          required: true

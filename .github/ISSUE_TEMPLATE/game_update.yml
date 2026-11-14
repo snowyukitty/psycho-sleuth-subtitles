@@ -1,0 +1,23 @@
+name: Steam Game Update Mismatch
+description: Let maintainers know when a Steam patch changes Psycho Sleuth_Data hashes so supported-build.json needs an update.
+title: "[Game Update] Steam build mismatch"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a new Steam build! Please run Steam's **Verify integrity of game files** before capturing any installer refusal message, and **do not overwrite updated game files with old backups**.
+  - type: input
+    id: version
+    attributes:
+      label: Tool release version
+      placeholder: e.g. v0.2.0-preview.1
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Exact installer refusal / mismatch output (sanitized)
+      description: Paste only the mismatched filename or Steam AppManifest BuildID, removing any personal username folders.
+    validations:
+      required: true

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support & Troubleshooting (English / 日本語 / 繁體中文 / 简体中文)
+    url: https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/SUPPORT.md
+    about: Check common fixes, Steam update recovery, and all four language guides before reporting an issue.
+  - name: GitHub Security Advisories / Security Policy
+    url: https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/SECURITY.md
+    about: Review SECURITY.md and never post exploit details or proprietary files publicly.
+  - name: Code of Conduct
+    url: https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/CODE_OF_CONDUCT.md
+    about: Issues created via the Contact Request form are public until moved off-issue; review CODE_OF_CONDUCT.md first.
