@@ -30,6 +30,20 @@ An unofficial **Windows x64** dual-subtitle patcher for Steam's ***Psycho-Sleuth
 
 ---
 
+## Release status
+
+**Download available: v0.2.0-preview.1.** The four guides above describe that published version. No mod loader is required; this tool adds neither furigana nor voice acting.
+
+**Next candidate: v0.2.0-preview.2 — automated checks complete, in-game visual QA pending.** It is not available for download yet. Its installer localization and layout/recovery improvements are not features of the current download.
+
+- 61 tests pass under normal Python, optimized Python and the pinned embedded runtime.
+- All 12 display orders pass isolated-data checks; both published prior versions pass upgrade and byte-exact restoration tests.
+- Screen readability, mixed-language fonts and human listening have not been qualified. See the [five-minute visual check](VISUAL_QA.md) and [candidate notes](RELEASE_NOTES.md).
+
+繁體中文：目前可下載 preview.1；preview.2 已完成自動驗證，仍待實機畫面確認，尚未發布。
+日本語：公開中は preview.1。preview.2 は自動検証済みですが、実機画面の確認待ちで未公開です。
+简体中文：目前可下载 preview.1；preview.2 已完成自动验证，仍待实机画面确认，尚未发布。
+
 ## Supported Pairs (6 Pairs · 12 Display Orders)
 
 | Menu Selection | Top Track → Bottom Track | CLI `--pair` Alias |
@@ -117,7 +131,7 @@ Launchers forward arguments directly to the installer (`Install.cmd` / `Restore.
 ## Support, Documentation & Terms
 
 - Need help or hit an incompatible Steam update? Read [SUPPORT.md](SUPPORT.md) or open an issue on [GitHub Issues](https://github.com/snowyukitty/psycho-sleuth-subtitles/issues).
-- Interested in release history or unreleased `main` improvements not yet in `v0.2.0-preview.1` (such as `--lang` UI localization and PowerShell process-check fallback)? See [CHANGELOG.md](CHANGELOG.md).
+- For upcoming preview.2 layout, recovery, installer language (`--lang`) and process-check improvements, see [CHANGELOG.md](CHANGELOG.md).
 - Reporting a potential security issue? Check [SECURITY.md](SECURITY.md).
 - Want to improve docs, translations, or tooling? Read [CONTRIBUTING.md](CONTRIBUTING.md) and our [Code of Conduct](CODE_OF_CONDUCT.md).
 

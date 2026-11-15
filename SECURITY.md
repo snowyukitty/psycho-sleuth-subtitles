@@ -13,8 +13,9 @@
 
 | Version | Security & Compatibility Support |
 | --- | --- |
-| `v0.2.0-preview.1` | Current public preview release |
-| `v0.1.0-preview.1` | Superseded (upgrade directly using `v0.2.0-preview.1`; verified backups are reused automatically) |
+| `v0.2.0-preview.2` | Prepared locally; pending visual QA and publication |
+| `v0.2.0-preview.1` | Current published preview; upgrade to preview.2 after publication |
+| `v0.1.0-preview.1` | Superseded (upgrade to the published `v0.2.0-preview.1`, or preview.2 after publication; verified backups are reused automatically) |
 
 ## Reporting a Vulnerability
 

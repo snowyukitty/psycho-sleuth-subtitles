@@ -1,6 +1,10 @@
+# v0.2.0-preview.2 candidate — not yet published
+
+The current downloadable version is [v0.2.0-preview.1](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1). These notes describe the next candidate. The guides linked below describe the published version; candidate guides will ship with its ZIP.
+
 ## Four languages, six pairs, twelve orders
 
-Download **Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip**, extract it, and double-click **Install.cmd**. Choose the top language, then the bottom language. The ZIP includes four user guides and a one-click Restore.cmd. **SHA256SUMS.txt** is provided separately for download verification.
+After publication, download **Psycho-Sleuth-Subtitles-0.2.0-preview.2-Minimal.zip**, extract it, and double-click **Install.cmd**. Choose the top language, then the bottom language. The ZIP includes four user guides and a one-click Restore.cmd. **SHA256SUMS.txt** is provided separately for download verification.
 
 **[English](https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/docs/README.en.md) · [日本語](https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/docs/README.ja.md) · [繁體中文](https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/docs/README.zh-Hant.md) · [简体中文](https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/docs/README.zh-Hans.md)**
 
@@ -16,3 +20,13 @@ Windows x64. First launch downloads about 12 MB of verified official Python runt
 **Preview limitations:** Supported clean files or recognized tool installations only. In-game visual qualification is not complete. Use Traditional Chinese or Japanese as the game's text-language setting; the tool's chosen pair is independent. The original Traditional Chinese prologue subtitle is missing; pairs containing it use only the other selected language there. Some dense pages use inline pairs. Read the included guide before installation or recovery after a Steam update.
 
 Free download and use under the included LICENSE.txt; other rights are reserved. The game, its assets and full script are not included.
+
+## Preview.2 changes and artifact
+
+Improved dense-page layout and InputBr height, balanced rich-text tags, BOM/CR subtitle parsing, four-language installer UI, process checks, directory locks and interrupted-install recovery. See CHANGELOG.md for details.
+
+ZIP: **63,383 bytes**, 14 allowlisted members.
+
+SHA-256: `d8dc75c67db9322eb7ae6e0a2951c10817f3bb38c4fed4533650c0f1cece43e4`
+
+In-game visual qualification: **not_run**. This release remains pending owner Visual QA and publication approval.

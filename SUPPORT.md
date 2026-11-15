@@ -27,3 +27,7 @@ When opening a [Bug Report](https://github.com/snowyukitty/psycho-sleuth-subtitl
 
 - Include the **release version** (for example `v0.2.0-preview.1`), your **selected pair and order** (`top → bottom`), your **in-game text language setting**, and the exact error line shown by `Install.cmd`.
 - **Never attach game binaries, asset bundles, full scripts, Steam account IDs, or personal folder paths.**
+
+## Preview.2 installer language
+
+Available in the upcoming preview.2 candidate only (not the published preview.1): use `Install.cmd --lang en`, `ja`, `zh-Hant`, or `zh-Hans` to choose the wizard language independently of your subtitle pair. If process detection is inconclusive, installation stops safely: close the game and retry; do not bypass the check.

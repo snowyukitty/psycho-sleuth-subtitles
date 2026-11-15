@@ -6,13 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+No changes queued.
+
+## [0.2.0-preview.2] — Pending Visual QA
+
 ### Improved
 
 - **Subtitle layout optimizer:** Candidate search across stacked, compact, and merged modes now prefers readable inline/compact layouts (at `>= 18px` effective size on cutscene dialogue boxes) over crushing multi-line boxes down to `16px`, accounts for blank `InputBr` continuation height when flushing pages, and picks the least-overflowing candidate if every option exceeds height bounds.
 - **Rich-text tag balancing:** Unified tag balancing across `<align>`, `<speed>`, `<color>`, and `<size>` on every non-empty dialogue composition (including equal-string early returns and missing secondary rows) without synthesizing closing tags for self-contained TMP sprite tags (`<style=UI/...>`).
 - **Cutscene `.srt` & CRLF resilience:** Normalized UTF-8 BOM (`\ufeff`) and lone `\r` line endings when parsing cutscene subtitle tracks.
 - **Process lock, archive bounds & recovery hardening:** Added PowerShell `Get-Process` fallback using resolved `%SystemRoot%\System32` paths with fail-closed behavior if game-process probes are inconclusive; enforced pinned directory/stage/manifest identity checks, quarantine-based atomic unlink/rollback, strict LZMA/LZ4 block bounds without false-rejecting full-size blocks, redundant `installed.json.bak` identity verification, and strict target validation before corrupt/legacy journal recovery.
-- **Steam manifest & installer i18n:** Strict `installdir` traversal checks, `StateFlags != 4` update warnings, 4-language localized installer output (`--lang` / Windows UI locale & normalized `locale.getlocale()` fallback), explicit `sys.path` bootstrapping under embedded Python 3.14, `-O` assertion guard in local verification, and expanded regression tests.
+- **Steam manifest & installer i18n:** Strict `installdir` traversal checks, `StateFlags != 4` update warnings, 4-language localized installer output (`--lang` / Windows UI locale & normalized `locale.getlocale()` fallback), explicit `sys.path` bootstrapping under embedded Python 3.14, optimization-safe verification checks and `-O` entrypoint guards, and expanded regression tests.
 - **Documentation, visuals & community health:** Added light/dark responsive SVG hero and pipeline cards, `SUPPORT.md`, `SECURITY.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, GitHub issue/PR forms (including structured private security/CoC contact request routing), and automated docs/SVG/SHA/privacy CI verification.
 
 ## [0.2.0-preview.1] — 2026-11-11
@@ -35,3 +39,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 [Unreleased]: https://github.com/snowyukitty/psycho-sleuth-subtitles/compare/v0.2.0-preview.1...main
 [0.2.0-preview.1]: https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1
 [0.1.0-preview.1]: https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.1.0-preview.1
+
+[0.2.0-preview.2]: RELEASE_NOTES.md
