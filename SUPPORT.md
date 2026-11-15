@@ -31,3 +31,5 @@ When opening a [Bug Report](https://github.com/snowyukitty/psycho-sleuth-subtitl
 ## Preview.2 installer language
 
 Available in the upcoming preview.2 candidate only (not the published preview.1): use `Install.cmd --lang en`, `ja`, `zh-Hant`, or `zh-Hans` to choose the wizard language independently of your subtitle pair. If process detection is inconclusive, installation stops safely: close the game and retry; do not bypass the check.
+
+For preview.2 crash recovery and runtime download/retry coverage, see [Verification coverage](TESTING.md#runtime-recovery-for-testers). A corrupted runtime cache requires a fresh empty tool folder; keep the game backup folder intact.

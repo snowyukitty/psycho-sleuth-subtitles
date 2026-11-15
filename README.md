@@ -38,6 +38,7 @@ An unofficial **Windows x64** dual-subtitle patcher for Steam's ***Psycho-Sleuth
 
 - 61 tests pass under normal Python, optimized Python and the pinned embedded runtime.
 - All 12 display orders pass isolated-data checks; both published prior versions pass upgrade and byte-exact restoration tests.
+- Five interrupted legacy-install boundaries and five runtime bootstrap cases also pass; see the [verification coverage](TESTING.md).
 - Screen readability, mixed-language fonts and human listening have not been qualified. See the [five-minute visual check](VISUAL_QA.md) and [candidate notes](RELEASE_NOTES.md).
 
 繁體中文：目前可下載 preview.1；preview.2 已完成自動驗證，仍待實機畫面確認，尚未發布。
