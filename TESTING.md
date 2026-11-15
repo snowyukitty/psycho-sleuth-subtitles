@@ -17,10 +17,15 @@ This page describes the **unpublished v0.2.0-preview.2 candidate**, not a new do
 | Download interrupted / wrong checksum | Both safely refused | Deterministic PowerShell network-fault injection; no bad archive is promoted to the cache and the installer is not executed. |
 | Retry / corrupted cache | Valid retry succeeds; corrupted cache is refused | An interrupted staging download is replaced by a verified archive. An already-corrupted cache is not silently trusted or executed. |
 | Package and public export | Pass | Explicit allowlists, manifest hashes, UTF-8/privacy scans, SVG hashes, relative links, YAML and issue forms. |
+| Separate Windows machine: install and restore | Pass | Real Install.cmd with a fresh pinned runtime download, Japanese over Traditional Chinese, then Restore.cmd exit 0. All 8,285 files in the isolated runtime copy matched its baseline SHA-256 values after restoration. |
+
+The isolated runtime baseline was also compared with a locally cached Steam depot manifest: all 8,285 included files matched size and SHA-1. This is an offline comparison, **not** a fresh Steam client integrity check or manifest-signature verification. Game assets and raw manifests remain private.
 
 ## What is still pending
 
 In-game visual qualification is **NOT RUN**. Mixed-language glyphs, actual line wrapping, dense continuation pages, choices and cutscene presentation need the [visual checklist](VISUAL_QA.md). Screenshots and promotional footage must come from a save-isolated, legitimate installation running this subtitle-only candidate. Automated tests do not establish gameplay readability, audio quality or footage permissions.
+
+On November 15, 2026, an isolated launch stopped before the main menu: Windows Smart App Control blocked the original game DLL (Code Integrity event 3077). Security settings were left unchanged and the test copy was restored. See [launch troubleshooting](SUPPORT.md#game-launch-blocked-by-windows). No genuine gameplay footage was recorded in this attempt.
 
 Completed legacy-install upgrades and interrupted legacy-install recovery are separate tests. The crash matrix covers published 0.1 installation followed by candidate restoration; it does not claim every possible interruption inside every prior release or every Steam update.
 

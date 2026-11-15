@@ -15,11 +15,20 @@ Need help installing, switching subtitle pairs, or recovering ***Psycho-Sleuth* 
 | --- | --- | --- |
 | *"Game appears to be running"* | *Psycho-Sleuth* is still open (or closing in background). | Close the game completely in Steam / Task Manager and rerun `Install.cmd`. |
 | Auto-detection misses custom library or need state check | Game is installed in a non-standard folder or you want to verify installed backups. | Run `.\Install.cmd --detect` to inspect Steam detection, `.\Install.cmd --status` to check receipt status, or pass `--game-dir "<game-folder>"`. |
-| First launch stalls before menu | Antivirus or firewall blocked downloading the `~12 MB` official Python runtime from `python.org`. | Allow PowerShell to download `python-3.14.10-embed-amd64.zip`, or re-extract and retry. SHA-256 is verified automatically. |
+| Installer stalls before its menu | Network or security software prevents downloading the `~12 MB` official Python runtime from `python.org`. | Check the download error and network access to `python.org`, then retry. SHA-256 is verified automatically; do not bypass it. |
+| Game reports *"Failed to load il2cpp"* | Windows application control can block an original game DLL before the game starts. | See [Game launch blocked by Windows](#game-launch-blocked-by-windows). This error alone does not identify a subtitle patch failure. |
 | Previous install was interrupted mid-write | Power loss, process kill, or antivirus lock interrupted patching. | Close the game and rerun `Install.cmd` or `Restore.cmd`—the saved recovery journal restores or completes cleanly. |
 | Tool refuses files after a Steam update | Steam updated `Psycho Sleuth_Data` and hashes no longer match `supported-build.json`. | Run **Verify integrity of game files** in Steam, move `.psycho-sleuth-subtitles` outside the game folder for safekeeping, and open a **Game Update Report** issue. |
 | Only one subtitle line or blank text appears | Row lacks one translation in the game's built-in tables (e.g., prologue cutscene lacks `zh-Hant`). | Expected for untranslated rows/cutscenes. Set in-game text language to **Traditional Chinese** or **Japanese**. |
 | Unsure how to uninstall completely | Want to return to untouched vanilla Steam files. | Close the game and double-click `Restore.cmd` (or press `R` inside `Install.cmd`). Keep `.psycho-sleuth-subtitles` until restoration finishes. |
+
+## Game launch blocked by Windows
+
+In one isolated Windows test, Code Integrity event **3077** identified the original `GameAssembly.dll` as blocked by the enforced **VerifiedAndReputableDesktop** policy (Smart App Control). The DLL matched the locally cached Steam depot manifest; the game stopped before its main menu. The candidate's actual CMD installation and subsequent byte-exact restoration passed, but this launch attempt provided **no in-game visual qualification**.
+
+Close the game and restore the patch before comparing with the unmodified game. Use Steam's **Verify integrity of game files** for a Steam-managed installation. If the error persists, inspect Windows application-control events or ask your administrator; do not replace DLLs with unofficial downloads. Microsoft documents [Smart App Control behavior and its lack of per-app exceptions](https://support.microsoft.com/en-us/windows/security/threat-malware-protection/smart-app-control-frequently-asked-questions) and the [built-in application-control policies](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/inbox-wdac-policies). This tool does not change Windows security settings.
+
+繁體中文：若遊戲顯示「Failed to load il2cpp」，請先還原補丁並檢查原版能否啟動。Windows 也可能阻擋原版 DLL；不能只憑此訊息判定是字幕問題。回報時請去除事件中的個人路徑，不要上傳遊戲 DLL。
 
 ## Opening an Issue
 
