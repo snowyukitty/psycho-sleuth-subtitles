@@ -1,13 +1,15 @@
 # Support
 
+[English](README.md) · [日本語](README.ja.md) · [繁體中文](README.zh-Hant.md) · [简体中文](README.zh-Hans.md)
+
 Need help installing, switching subtitle pairs, or recovering ***Psycho-Sleuth* (*病能探偵* / *異病偵探* / *异病侦探*)** after a Steam update? Check the guides and common fixes below before opening an issue.
 
 ## Documentation by Language
 
-- [English User Guide](docs/README.en.md)
-- [日本語ガイド](docs/README.ja.md)
-- [繁體中文使用說明](docs/README.zh-Hant.md)
-- [简体中文使用说明](docs/README.zh-Hans.md)
+- **English:** [Full GitHub Page](README.md) · [Compact Quick Guide](docs/README.en.md)
+- **日本語:** [GitHub ページ](README.ja.md) · [シンプルガイド](docs/README.ja.md)
+- **繁體中文:** [GitHub 完整主頁](README.zh-Hant.md) · [精簡使用說明](docs/README.zh-Hant.md)
+- **简体中文:** [GitHub 完整主页](README.zh-Hans.md) · [精简使用说明](docs/README.zh-Hans.md)
 
 ## Quick Troubleshooting
 

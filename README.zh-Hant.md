@@ -1,0 +1,156 @@
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 500px)" srcset="assets/hero-compact-dark.svg?v=0b635f04549a467c">
+  <source media="(max-width: 500px)" srcset="assets/hero-compact-light.svg?v=2ed088de2dd8572b">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=0bc36a0d637e41c9">
+  <img alt="異病偵探 Psycho-Sleuth 四語雙字幕 — Windows x64 適用 6 種配對、12 種上下排列" src="assets/hero-light.svg?v=2cde4044899b0f63">
+</picture>
+
+<br>
+
+**[English](README.md)** · **[日本語](README.ja.md)** · **繁體中文** · **[简体中文](README.zh-Hans.md)**
+
+<br>
+
+**[立即下載 (`v0.2.0-preview.1` ZIP)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[版本說明與 SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[所有版本](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
+
+[精簡隨附說明](docs/README.zh-Hant.md) · [疑難排解](SUPPORT.md) · [下一版預告](RELEASE_NOTES.md) · [更新紀錄](CHANGELOG.md) · [使用條款](LICENSE)
+
+</div>
+
+---
+
+這是 Steam 版 **《異病偵探 Psycho-Sleuth》（病能探偵 / 异病侦探）** 的非官方 **Windows x64 雙字幕工具**，直接組合遊戲原本內建的官方翻譯，適合雙語遊玩、學日文或對照各語譯文。
+
+- **四語任選兩種、上下自由配：** 支援 **English**、**日本語**、**繁體中文**、**简体中文**，共 **6 種配對、12 種上下順序**。
+- **繁簡各自使用原版譯文：** 繁體與簡體中文分別讀取遊戲原有的獨立翻譯欄位，絕不經過機翻或自動繁簡轉換。
+- **免折騰直接用：** 不必自己裝 Python、不用裝 Mod Loader、不用 API key、不加配音、不上傳任何遊戲文字。
+- **隨時切換或一鍵還原：** 已驗證的原版備份保存在遊戲資料夾內，想換組合或用 `Restore.cmd` 還原原版都能輕鬆完成。
+
+---
+
+## 最簡安裝教學（4 步搞定）
+
+### 1. 準備好 Steam 版遊戲並先關閉
+- 先確認已在 Windows 的 Steam 裝好《異病偵探 Psycho-Sleuth》，**完全關閉遊戲**，並暫停 Steam 自動更新。
+
+### 2. 下載並解壓縮
+- 從 [`v0.2.0-preview.1`](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1) 下載 **`Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip`**。
+- 把**整個壓縮檔**解壓到可寫入的資料夾（請保留裡面的 `_tool` 資料夾，與 `Install.cmd`、`Restore.cmd` 放在一起）。
+- *不需要自己裝 Python — 首次執行會自動從 `python.org` 下載約 12 MB、經 SHA-256 核對的官方運行檔，不會改動系統原本的 Python。*
+
+### 3. 雙擊 `Install.cmd` 選好上下語言
+- 工具通常會自動找到 Steam 遊戲資料夾（如果沒找到，貼上你的遊戲資料夾路徑按 Enter 即可）。
+- 依序選 **上方語言** → **下方語言**：
+  - `1` = English（英文）
+  - `2` = 日本語（日文）
+  - `3` = 繁體中文
+  - `4` = 简体中文（簡體中文）
+  - *例如想看「日文在上、繁中在下」，就按 `2` 再按 `3`。*
+- 選完下方語言就會立即自動安裝。
+
+### 4. 開遊戲設定文字語言就能玩
+- 啟動遊戲後，將遊戲內的文字語言設為 **「繁體中文」** 或 **「日文」**。
+- 無論選這兩個哪一個，對話畫面都會顯示你剛剛配好的雙語字幕。
+
+---
+
+## 日常切換與還原
+
+- **想換別種語言或上下對調：** 關掉遊戲，再雙擊一次 **`Install.cmd`** 重選就好（會自動沿用原版備份，不用先還原）。
+- **想變回原本乾淨的原版：** 關掉遊戲，雙擊 **`Restore.cmd`** 一鍵精確還原（或在 `Install.cmd` 第一個畫面按 `R`）。還原完成前，請不要刪掉遊戲資料夾內的 `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original`。
+- **萬一裝到一半當掉或關掉視窗：** 先別開遊戲，再執行一次 `Install.cmd` 或 `Restore.cmd` 就會自動恢復。
+- **遇到 Steam 更新遊戲：** **千萬不要把舊備份硬蓋回新版遊戲**。若工具因版本雜湊不同而拒絕寫入，請先在 Steam 執行 **「驗證遊戲檔案的完整性」**，把 `.psycho-sleuth-subtitles` 移出遊戲資料夾妥善保存，再等待對應新版工具更新。
+- **從 `0.1.0-preview.1` 升級：** 把新版 ZIP 解壓到另一個新資料夾，直接執行新版 `Install.cmd` 即可，不用手動先還原（請保留遊戲內的 `.psycho-sleuth-subtitles`）。*（提醒：0.2.0 起選項 `4` 改為簡體中文，還原請按 `R` 或執行 `Restore.cmd`。）*
+
+---
+
+## 支援的 6 種配對（12 種上下排列）
+
+| 選單按法 | 上方字幕 → 下方字幕 | 命令列 `--pair` 代號 |
+| --- | --- | --- |
+| `1 → 2` / `2 → 1` | English / 日本語 | `en-ja` / `ja-en` |
+| `1 → 3` / `3 → 1` | English / 繁體中文 | `en-zh-Hant` / `zh-Hant-en` |
+| `1 → 4` / `4 → 1` | English / 简体中文 | `en-zh-Hans` / `zh-Hans-en` |
+| `2 → 3` / `3 → 2` | 日本語 / 繁體中文 | `ja-zh-Hant` / `zh-Hant-ja` |
+| `2 → 4` / `4 → 2` | 日本語 / 简体中文 | `ja-zh-Hans` / `zh-Hans-ja` |
+| `3 → 4` / `4 → 3` | 繁體中文 / 简体中文 | `zh-Hant-zh-Hans` / `zh-Hans-zh-Hant` |
+
+下載的 ZIP 內 `docs/` 資料夾也已完整收錄四語隨身說明。
+
+---
+
+<details>
+<summary><strong>進階：命令列參數與檔案 SHA-256 校驗（選用）</strong></summary>
+
+可在解壓後的資料夾內開啟 PowerShell 或命令提示字元，直接帶參數執行 `Install.cmd` 或 `Restore.cmd`：
+
+```powershell
+# 選用：核對下載 ZIP 的 SHA-256
+Get-FileHash .\Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip
+
+# 互動選單
+.\Install.cmd
+
+# 免互動直接安裝（語言代碼：en, ja, zh-Hant, zh-Hans）
+.\Install.cmd --pair en-ja
+.\Install.cmd --top ja --bottom zh-Hant
+.\Install.cmd --list-pairs
+.\Install.cmd --detect
+.\Install.cmd --status
+.\Install.cmd --game-dir "<game-folder>" --pair en-zh-Hant
+
+# 一鍵精確還原原版
+.\Restore.cmd
+```
+
+舊版代碼 `zh-en` 與 `zh-ja` 仍可使用，會對應為「繁體中文在上」；`ja-en` 維持不變。
+
+</details>
+
+<details>
+<summary><strong>運作原理與安全檢查</strong></summary>
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 500px)" srcset="assets/architecture-compact-dark.svg?v=5db98538903c646b">
+  <source media="(max-width: 500px)" srcset="assets/architecture-compact-light.svg?v=33e6f6571cfb70de">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/architecture-dark.svg?v=3baf536cab5b7ce6">
+  <img alt="四階段安全修補流程：預檢與 SHA-256 驗證、日誌備份、本機劇本與 22 段過場合成、自由切換與位元組精確還原" src="assets/architecture-light.svg?v=cb158551b91975e5">
+</picture>
+
+</div>
+
+1. **嚴格預檢（`supported-build.json`）：** 修改前會先比對 Windows x64 Steam IL2CPP 執行檔、Unity 資料封包與 Addressables 目錄雜湊；遇到未支援的新版本或其他模組會安全拒絕寫入。
+2. **驗證執行環境與日誌備份：** 首次執行從 `python.org` 取得固定 SHA-256 的官方 Python 3.14.10 嵌入版（約 12 MB）快取於 `_tool\python-runtime.zip`，每次啟動重驗雜湊後在獨立 `%TEMP%` 目錄執行（結束自動清除）。原版檔案備份與寫入日誌保存在 `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original`。
+3. **完整保留原版語音與節奏：** 只修補劇情對白、選項、本地化文字表、TextMeshPro 字級／目錄雜湊與 **22 組過場動畫 `.srt` 字幕**，原版語音欄位（`157,099`）與非字幕物件（`10,858`）完全保留不動。
+
+</details>
+
+---
+
+## 適用範圍與預覽版提醒
+
+- **涵蓋文字：** 主線與探索劇情對白、分支選項、**22 部過場動畫 `.srt` 字幕**。選單、角色名稱與線索介面仍保持遊戲原本的介面語言。
+- **高密度對話頁：** 多數對白採上下兩行對照；極少數行數較多的頁面會依選定順序改為同行對照，保留原本點擊節奏。兩語言原文完全相同時只顯示一次。
+- **序章動畫與缺漏譯文：** 遊戲原版的序章動畫缺少繁體中文 `.srt`，因此含「繁體中文」的配對在該段只會顯示你選的另一種語言（若搭配簡中則顯示簡中）。遇缺單邊譯文的對白或過場時間差，會暫時顯示單語或維持遊戲當前設定語言。
+- **目前驗證狀態：** 所有 **12 種排列**、切換、由 `0.1.0` 升級、含空白與非 ASCII 路徑、語音與控制欄位保留及位元組還原都已通過隔離資料自動化驗證；但實際遊戲畫面的長句換行、選項按鈕與英文／簡中遊戲字型表現尚未完成全流程人工目視驗收，因此建議先把遊戲文字語言設為 **「繁體中文」或「日文」**。
+
+---
+
+## 版本狀態
+
+- **目前可下載版本：`v0.2.0-preview.1`** — 上方安裝步驟與四語說明均對應此公開版本。
+- **下一版候選：`v0.2.0-preview.2`（尚未公開發佈）** — 自動測試、安裝精靈四語本地化與異常中斷復原驗證皆已完成，正等待實機畫面目視檢查。詳見 [自動驗證範圍](TESTING.md)、[五分鐘實機目視檢查表](VISUAL_QA.md) 與 [候選版本說明](RELEASE_NOTES.md)。
+
+---
+
+## 協助、參與貢獻與使用條款
+
+- 安裝遇到狀況或遊戲更新後無法套用？請先看 [SUPPORT.md](SUPPORT.md) 或到 [GitHub Issues](https://github.com/snowyukitty/psycho-sleuth-subtitles/issues) 回報。
+- 想一起改善文件翻譯或回報排版問題？歡迎閱讀 [CONTRIBUTING.md](CONTRIBUTING.md) 與 [行為準則](CODE_OF_CONDUCT.md)。
+- 安全性問題請參閱 [SECURITY.md](SECURITY.md)；完整改版紀錄見 [CHANGELOG.md](CHANGELOG.md)。
+
+依 [LICENSE](LICENSE) 條款免費下載並供個人安裝與備份使用，其餘權利保留（非 MIT 等開源授權）。分享時請直接貼上本頁或 [官方 Releases 頁面](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases) 連結，勿自行重新打包散佈。本工具為非官方作品，與遊戲原作者無關，需搭配合法購買安裝的 Steam 版《異病偵探 Psycho-Sleuth》使用；自動下載之官方嵌入版 Python 保留其自身授權。

@@ -6,7 +6,7 @@ Thank you for helping improve **Psycho-Sleuth Dual Subtitles**!
 
 This public repository (`snowyukitty/psycho-sleuth-subtitles`) hosts:
 
-- Documentation in English, Japanese, Traditional Chinese, and Simplified Chinese (`README.md`, `docs/README.*.md`, `SUPPORT.md`, `CHANGELOG.md`)
+- Documentation in English, Japanese, Traditional Chinese, and Simplified Chinese (`README.md`, `README.ja.md`, `README.zh-Hant.md`, `README.zh-Hans.md`, `docs/README.*.md`, `SUPPORT.md`, `CHANGELOG.md`)
 - Accessible visual diagrams under `assets/`
 - Community health files, issue templates, and automated documentation/asset verification workflows (`.github/`)
 - Release archives (`Minimal.zip` + `SHA256SUMS.txt`) distributed under [Releases](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)
@@ -23,7 +23,7 @@ Never include or attach any of the following in issues, pull requests, screensho
 
 1. **Report a bug or layout issue** via [Bug Report](https://github.com/snowyukitty/psycho-sleuth-subtitles/issues/new?template=bug_report.yml) (include pair, order, in-game language setting, and approximate scene name without pasting full dialogue blocks).
 2. **Flag a Steam game update** via [Game Update Report](https://github.com/snowyukitty/psycho-sleuth-subtitles/issues/new?template=game_update.yml) when `supported-build.json` rejects a newer official Steam build.
-3. **Improve documentation or translations** by editing `README.md` or keeping all four guides (`docs/README.en.md`, `docs/README.ja.md`, `docs/README.zh-Hant.md`, `docs/README.zh-Hans.md`) aligned in meaning and links.
+3. **Improve documentation or translations** by keeping the four localized READMEs (`README.md`, `README.ja.md`, `README.zh-Hant.md`, `README.zh-Hans.md`) and four compact guides (`docs/README.en.md`, `docs/README.ja.md`, `docs/README.zh-Hant.md`, `docs/README.zh-Hans.md`) aligned in meaning and links.
 
 ## Pull Request Checklist
 
