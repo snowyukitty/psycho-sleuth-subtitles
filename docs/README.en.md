@@ -4,6 +4,8 @@
 
 An unofficial **Windows x64 preview** that pairs built-in official translations already inside your copy of *Psycho-Sleuth*. No added voices, API keys, mod loaders, or game-text uploads.
 
+> **Steam Build Note:** Currently downloadable `v0.2.0-preview.1` targets Steam Build `26481838` (safe no-op refusal on newer builds); support for Steam **Build `26746656` (`2026-11-20`)** arrives in `v0.2.0-preview.2`.
+
 ## Quick Start (4 Simple Steps)
 
 1. **Close the game:** Make sure your Steam copy of *Psycho-Sleuth* is completely closed and pause Steam auto-updates.
@@ -11,6 +13,13 @@ An unofficial **Windows x64 preview** that pairs built-in official translations 
    *No manual Python install needed — first launch downloads a SHA-256-verified ~12 MB official Python 3.14.10 embeddable runtime from `python.org` into `_tool\python-runtime.zip`, runs in an isolated `%TEMP%` folder cleaned on exit, and leaves system Python untouched.*
 3. **Double-click `Install.cmd` and pick 2 languages:** Auto-detection locates Steam libraries (or paste your writable game folder path if prompted). Choose the **top** language, then a different **bottom** language (`1` English · `2` 日本語 · `3` 繁體中文 · `4` 简体中文; e.g., `2 → 3` for Japanese above Traditional Chinese). Installation starts immediately; on the first screen, **R** restores and **0** exits; on the second screen, **0** goes back.
 4. **Launch & set in-game text language:** Open *Psycho-Sleuth* and choose **Traditional Chinese (`繁體中文`)** or **Japanese (`日本語`)** as the game text language. Either setting displays your chosen dual-subtitle pair.
+
+## Why You Can Trust This
+
+- **Plain, inspectable scripts (no opaque `.exe`):** Everything inside `_tool\` is readable source text you can inspect in Notepad.
+- **Zero risk to saves or system Python:** Never touches Unity saves, Steam Cloud, or your system Python installation.
+- **Always reversible:** Saves byte-exact originals in `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original`; `Restore.cmd` restores 100% and Steam's **Verify integrity of game files** always works as a fallback.
+- **Windows SmartScreen note:** If Windows shows *"Windows protected your PC"* for an unsigned `.cmd`, verify your official GitHub Release download and click **More info → Run anyway**.
 
 ## Everyday Tips
 

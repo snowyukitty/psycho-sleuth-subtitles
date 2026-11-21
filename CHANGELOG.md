@@ -10,8 +10,13 @@ No changes queued.
 
 ## [0.2.0-preview.2] — Pending Visual QA
 
+### Added
+
+- **Steam Build `26746656` support (`2026-11-20` game update):** Updated `supported-build.json`, the Addressables video subtitle bundle target, and `SubtitlesUGUIVideoPlayer` object reference (`path_id = 50511`) so the tool matches the current official Steam build.
+
 ### Improved
 
+- **Player-first multilingual docs & trust guidance:** Added full localized root READMEs (`README.ja.md`, `README.zh-Hant.md`, `README.zh-Hans.md`), simplified 4-step guides, and clear transparency notes (inspectable plain scripts, save/system Python safety, byte-exact `Restore.cmd`, and Windows SmartScreen tips) in both GitHub docs and the four offline ZIP guides.
 - **Subtitle layout optimizer:** Candidate search across stacked, compact, and merged modes now prefers readable inline/compact layouts (at `>= 18px` effective size on cutscene dialogue boxes) over crushing multi-line boxes down to `16px`, accounts for blank `InputBr` continuation height when flushing pages, and picks the least-overflowing candidate if every option exceeds height bounds.
 - **Rich-text tag balancing:** Unified tag balancing across `<align>`, `<speed>`, `<color>`, and `<size>` on every non-empty dialogue composition (including equal-string early returns and missing secondary rows) without synthesizing closing tags for self-contained TMP sprite tags (`<style=UI/...>`).
 - **Cutscene `.srt` & CRLF resilience:** Normalized UTF-8 BOM (`\ufeff`) and lone `\r` line endings when parsing cutscene subtitle tracks.

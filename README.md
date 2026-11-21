@@ -58,6 +58,15 @@ An unofficial **Windows x64** dual-subtitle tool for Steam's ***Psycho-Sleuth* (
 
 ---
 
+## Why You Can Trust This
+
+- **Plain, inspectable scripts — no opaque `.exe`:** Everything inside `_tool\` is readable source text you can open in Notepad before running.
+- **Zero risk to saves or your system Python:** Never touches Unity saves, PlayerPrefs, Steam Cloud, or your system Python installation.
+- **Always reversible:** Saves byte-exact backups in `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` before modifying game files. Double-clicking **`Restore.cmd`** rolls back 100%, and Steam's **Verify integrity of game files** always acts as a clean fallback.
+- **Windows SmartScreen prompt:** Because downloaded `.cmd` files are unsigned, Windows Defender SmartScreen may show a blue *"Windows protected your PC"* prompt. After confirming your download came from the official GitHub Release, click **More info → Run anyway**.
+
+---
+
 ## Everyday Tips
 
 - **Switch pairs or flip top/bottom anytime:** Close the game and double-click **`Install.cmd`** again — verified originals are reused automatically.
@@ -144,8 +153,10 @@ Legacy aliases `zh-en` and `zh-ja` resolve to Traditional Chinese on top; `ja-en
 
 ## Release status
 
-- **Download available now: `v0.2.0-preview.1`** — the Quick Start steps and four guides match this published release.
-- **Next candidate: `v0.2.0-preview.2` (not yet published)** — automated checks, installer localization, and crash-recovery tests are complete; in-game visual QA is still pending. See [verification coverage](TESTING.md), the [five-minute visual check](VISUAL_QA.md), and [candidate notes](RELEASE_NOTES.md).
+> **Steam Build Notice (`2026-11-20`):** Steam updated *Psycho-Sleuth* to **Build `26746656`**. The currently published **`v0.2.0-preview.1`** ZIP only supports the earlier Build `26481838` and safely refuses newer builds without modifying your files. **`v0.2.0-preview.2`** has already been updated and automated-verified for **Build `26746656`** and is awaiting release publication.
+
+- **Download available now: `v0.2.0-preview.1`** — supports Steam Build `26481838` (the Quick Start steps and four guides match this published release).
+- **Next candidate: `v0.2.0-preview.2` (not yet published)** — updated for Steam **Build `26746656`**, with automated 12-order, 3-runtime unit, and packaged CMD install/restore checks complete; in-game visual QA is still pending. See [verification coverage](TESTING.md), the [five-minute visual check](VISUAL_QA.md), and [candidate notes](RELEASE_NOTES.md).
 
 ---
 

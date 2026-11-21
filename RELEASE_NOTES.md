@@ -23,10 +23,10 @@ Free download and use under the included LICENSE.txt; other rights are reserved.
 
 ## Preview.2 changes and artifact
 
-Improved dense-page layout and InputBr height, balanced rich-text tags, BOM/CR subtitle parsing, four-language installer UI, process checks, directory locks and interrupted-install recovery. See CHANGELOG.md for details.
+Updated for Steam **Build `26746656`** (`2026-11-20` game update: refreshed asset hashes, Addressables subtitle bundle, and `SubtitlesUGUIVideoPlayer` `path_id`), improved dense-page layout and InputBr height, balanced rich-text tags, BOM/CR subtitle parsing, four-language installer UI (`--lang` / Windows auto-detect), player trust & SmartScreen guidance in the four bundled guides, process checks, directory locks, and interrupted-install recovery. Automated checks on Build `26746656` passed (61 unit tests across 3 Python runtimes, all 12 orders with `49,702` dialogue records / `22` video sets / `157,263` voice cells / `10,898` other objects / `0` estimated overflow, and packaged CMD interactive/CLI/restore roundtrip). See CHANGELOG.md and TESTING.md for details.
 
-ZIP: **63,383 bytes**, 14 allowlisted members.
+ZIP: **63,817 bytes**, 14 allowlisted members.
 
-SHA-256: `d8dc75c67db9322eb7ae6e0a2951c10817f3bb38c4fed4533650c0f1cece43e4`
+SHA-256: `c2f5299b23545dafb7e6f127d155a03acfb0246ec1a1b1f0366059de0f3fc49c`
 
 In-game visual qualification: **not_run**. This release remains pending owner Visual QA and publication approval.
