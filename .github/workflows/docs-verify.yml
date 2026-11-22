@@ -75,16 +75,21 @@ jobs:
               re.compile(r"\bsteamid(?:64)?\b\s*[:=]\s*\d+", re.IGNORECASE),
               re.compile(r"\b(?:ghp_|github_pat_|gho_|ghu_|sk-ant-|AIza)[A-Za-z0-9_-]{20,}"),
           ]
-          text_exts = {".md", ".svg", ".yml", ".yaml", ".json", ".txt"}
+          text_exts = {".md", ".svg", ".yml", ".yaml", ".json", ".txt", ".html", ".js", ".mjs", ".css", ".xml"}
           for path in sorted(root.rglob("*")):
               if not path.is_file() or ".git" in path.parts:
                   continue
-              if path.suffix.lower() not in text_exts and path.name != "LICENSE":
+              if path.suffix.lower() not in text_exts and path.name not in ("LICENSE", ".nojekyll"):
                   continue
               body = path.read_text(encoding="utf-8")
+              if path != Path(".github/workflows/docs-verify.yml"):
+                  assert "/releases/latest" not in body.lower(), f"Disallowed /releases/latest reference in {path}"
               for pat in leak_patterns:
                   m = pat.search(body)
                   assert not m, f"Disallowed leak pattern {m.group(0)!r} in {path}"
+              if path.suffix.lower() in {".html", ".js", ".mjs", ".css"}:
+                  assert not re.search(r'<script[^>]+src=["\']https?://', body, re.IGNORECASE), f"External CDN script disallowed in {path}"
+                  assert not re.search(r'<link[^>]+rel=["\']stylesheet["\'][^>]+href=["\']https?://', body, re.IGNORECASE), f"External CDN stylesheet disallowed in {path}"
 
           link_re = re.compile(r'\[[^\]]*\]\(([^)]+)\)|(?:src|srcset|href)\s*=\s*["\']([^"\']+)["\']')
           ref_re = re.compile(r"^\s*\[[^\]]+\]:\s*<?([^\s>]+)>?", re.MULTILINE)
@@ -126,3 +131,6 @@ jobs:
                       assert actual_v == expected_v, f"Stale ?v= cache-buster {actual_v!r} for {rel} in {md} (expected {expected_v!r})"
               print(f"MD OK: {md}")
           PY
+
+      - name: Validate Browser Web Patcher JS syntax and self-test
+        run: node -e "const{execFileSync}=require('node:child_process'),fs=require('node:fs');for(const f of fs.readdirSync('docs/patcher').sort())if(f.endsWith('.js'))execFileSync(process.execPath,['--check','docs/patcher/'+f],{stdio:'inherit'});execFileSync(process.execPath,['docs/patcher/selftest.mjs'],{stdio:'inherit'});"

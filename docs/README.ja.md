@@ -4,22 +4,22 @@
 
 ゲーム本体に収録済みの公式翻訳を組み合わせて表示する、非公式の **Windows x64 向けプレビュー版**です。音声追加・API キー・MOD ローダー・テキスト送信は一切不要です。
 
-> **Steam ビルド補足：** 現在公開中の `v0.2.0-preview.1` は Steam Build `26481838` 向けです（新しいビルドではファイルを変更せず安全に停止します）。Steam **Build `26746656`（`2026-11-20`）** への対応は `v0.2.0-preview.2` で公開予定です。
+> **おすすめ（CMD不要）：** Microsoft Edge / Chrome で使える **[ブラウザ Web パッチャー](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)** は Steam **Build `26746656`**（`2026-11-20`）と **Build `26481838`** の両方にすぐ対応できます。現在公開中のオフライン ZIP `v0.2.0-preview.1` は Build `26481838` 向けで、Build `26746656` 対応版 ZIP は `v0.2.0-preview.2` として公開予定です。
 
 ## かんたん導入（4ステップ）
 
-1. **ゲームを閉じる：** Steam 版 *Psycho-Sleuth* を完全に終了し、Steam の自動更新を一時停止します。
+1. **ゲームを閉じる：** Steam 版 *Psycho-Sleuth* を完全に終了し、更新設定は「起動時にのみこのゲームを更新」にしておきます。
 2. **ダウンロードして展開する：** [`v0.2.0-preview.1` リリース](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)から **Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip** を入手し、ZIP 全体を書き込み可能なフォルダーへ展開します（`_tool` は `Install.cmd`・`Restore.cmd` と同じ場所に残してください）。
-   *Python の事前導入は不要です。初回のみ `python.org` から固定 SHA-256 検証済みの公式 Python 3.14.10 埋め込み版（約 12 MB）を `_tool\python-runtime.zip` に取得し、`%TEMP%` 内で実行して終了時に削除します。システム側の Python は変更しません。*
+   *Python の事前導入は不要です。初回のみ `python.org` から固定 SHA-256 検証済みの署名入り公式 Python 3.14.10 埋め込み版（約 12 MB）を `_tool\python-runtime.zip` に取得し、`%TEMP%` 内で実行して終了時に削除します。システム側の Python は変更しません。*
 3. **`Install.cmd` をダブルクリックして2言語を選ぶ：** Steam フォルダーは自動検出されます（入力を求められた場合は書き込み可能なゲームフォルダーを貼り付けてください）。**上段** → **下段** の順に選びます（`1` English · `2` 日本語 · `3` 繁體中文 · `4` 简体中文。例：`2 → 3` で上段が日本語・下段が繁体字中国語）。下段を選ぶと即座にインストールが始まります。最初の画面では **R** で復元・**0** で終了、次の画面では **0** で戻ります。
 4. **起動してテキスト言語を設定する：** ゲームを起動し、テキスト言語を **「日本語」** または **「繁體中文」** に設定すれば、選んだ二言語字幕が表示されます。
 
 ## 安心して使える理由
 
-- **中身を読めるスクリプトだけ（謎の `.exe` なし）：** `_tool\` 内はすべてテキスト／Python ソースで、実行前にメモ帳で確認できます。
+- **中身を読めるスクリプト中心：** `_tool\` 内はメモ帳で確認できるテキストソースで、起動される実行ファイルは `python.org` 公式署名済みの `python.exe`（SHA-256 一致時のみ）だけです。
 - **セーブデータも PC の Python も触らない：** Unity セーブ・Steam クラウド・システム Python には手を加えません。
-- **いつでも元に戻せる：** 変更前に `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` へ元ファイルを保存するため `Restore.cmd` で 100% 復元でき、Steam の「ゲームファイルの整合性を確認」でも復旧できます。
-- **SmartScreen が出たとき：** 署名のない `.cmd` への確認が出たら、公式 GitHub Release からの取得であることを確認のうえ **「詳細情報」→「実行」** を押してください。
+- **いつでも元に戻せる：** 変更前に `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` へ元ファイルを保存（Web 版と完全互換）するため `Restore.cmd` で 100% 復元でき、Steam の「ゲームファイルの整合性を確認」でも復旧できます。
+- **SmartScreen / Smart App Control 補足：** 署名なし `.cmd` で確認画面が出たら **「詳細情報」→「実行」** を押してください。**Smart App Control** 有効環境では、ファイル取得不要の **[ブラウザ Web パッチャー](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)** を使うか、展開前に ZIP の「プロパティ」→「許可する」にチェックを入れてください。
 
 ## 日常の使い方
 

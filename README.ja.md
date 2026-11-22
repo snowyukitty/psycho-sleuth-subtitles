@@ -1,10 +1,10 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 500px)" srcset="assets/hero-compact-dark.svg?v=0b635f04549a467c">
-  <source media="(max-width: 500px)" srcset="assets/hero-compact-light.svg?v=2ed088de2dd8572b">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=0bc36a0d637e41c9">
-  <img alt="Psycho-Sleuth 二言語字幕 — Windows x64 向け 4言語・6組・上下12通りの字幕パッチ" src="assets/hero-light.svg?v=2cde4044899b0f63">
+  <source media="(prefers-color-scheme: dark) and (max-width: 500px)" srcset="assets/hero-compact-dark.svg?v=19d2e89bc0bfda8f">
+  <source media="(max-width: 500px)" srcset="assets/hero-compact-light.svg?v=09776febd8671ccc">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=8c5ceb9432b76c47">
+  <img alt="Psycho-Sleuth 二言語字幕 — Web パッチャー & Windows x64 ツール（4言語・6組・上下12通り）" src="assets/hero-light.svg?v=e92cfbcf83063b48">
 </picture>
 
 <br>
@@ -13,7 +13,9 @@
 
 <br>
 
-**[ダウンロード (`v0.2.0-preview.1` ZIP)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[リリースノート & SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[リリース一覧](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
+**[🚀 ブラウザ Web パッチャーを開く（黒い画面なし・最新 Build 26746656 対応）](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)**
+
+**[オフライン ZIP 版 (`v0.2.0-preview.1`)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[リリースノート & SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[リリース一覧](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
 
 [シンプル版ガイド](docs/README.ja.md) · [サポート](SUPPORT.md) · [次期候補ノート](RELEASE_NOTES.md) · [更新履歴](CHANGELOG.md) · [利用条件](LICENSE)
 
@@ -21,57 +23,63 @@
 
 ---
 
-Steam 版 ***Psycho-Sleuth*（病能探偵 / 異病偵探 / 异病侦探）** 向けの非公式 **Windows x64 二言語字幕ツール**です。ゲーム本体に収録済みの公式翻訳をそのまま組み合わせるため、語学学習・対訳確認・翻訳比較にそのまま使えます。
+Steam 版 ***Psycho-Sleuth*（病能探偵 / 異病偵探 / 异病侦探）** 向けの非公式 **Windows x64 二言語字幕ツール**です。ゲーム本体に収録済みの公式翻訳をそのまま組み合わせるため、語学学習・対訳確認・翻訳比較に安心して使えます。
 
 - **4言語から好きな2言語を上下自由に配置：** **English**・**日本語**・**繁體中文**・**简体中文** の **6組・12通り**に対応。
+- **黒い画面（CMD）ゼロのブラウザ Web パッチャー（推奨）：** Windows の **Edge** または **Chrome** で開くだけで、ライブプレビュー・フォルダー選択・適用まで完結。**実行ファイル取得も外部アップロードも 0 バイト**です。
 - **繁体字・簡体字は公式の別翻訳を使用：** ゲーム内の独立した翻訳データをそのまま読み込み、機械翻訳や自動変換は行いません。
-- **面倒な事前準備なし：** Python の導入・MOD ローダー・API キー・音声追加・テキスト送信は一切不要です。
-- **いつでも元通り：** 検証済みバックアップをゲーム内に保存するため、別の組み合わせへの変更や `Restore.cmd` での完全復元がワンクリックで行えます。
+- **完全互換のワンクリック復元：** Web パッチャーとオフライン ZIP 版は同じ `.psycho-sleuth-subtitles/original` バックアップ形式を共有しており、いつでも元の Steam 純正ファイルへ戻せます。
 
 ---
 
-## かんたん導入ガイド（4ステップ）
+## 導入方法を選ぶ
 
-### 1. Steam 版ゲームを用意して終了する
-- Windows Steam 版の *Psycho-Sleuth* を用意し、**ゲームを完全に終了**して Steam の自動更新を一時停止します。
+| 導入方法 | おすすめ対象 | 対応 Steam Build | 黒い画面・警告画面 |
+| --- | --- | --- | --- |
+| **[ブラウザ Web パッチャー](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)** *（推奨）* | ほとんどの Windows 10/11 ユーザー（Edge / Chrome） | **`26746656`** (`2026-11-20`) & **`26481838`** | **なし**（`.cmd` / `.exe` ゼロ、SmartScreen / Smart App Control 回避） |
+| **[オフライン ZIP (`v0.2.0-preview.1`)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** | Steam 自動検出や CLI 切替を使いたい方向け | `26481838` *（Build `26746656` preview.2 ZIP は実機確認待ち）* | `.cmd` + SHA-256 検証済みの `python.org` 公式 `python.exe` を実行 |
 
-### 2. ZIP をダウンロードして展開する
-- [`v0.2.0-preview.1`](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1) から **`Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip`** をダウンロードします。
-- ZIP の**中身全体**を書き込み可能なフォルダーへ展開してください（`_tool` フォルダーは `Install.cmd`・`Restore.cmd` と同じ場所に残します）。
-- *Python の事前インストールは不要です。初回起動時のみ `python.org` から約 12 MB の公式 Python 実行環境を SHA-256 検証付きで自動取得し、PC の Python 環境は変更しません。*
+---
 
-### 3. `Install.cmd` をダブルクリックして2言語を選ぶ
-- 通常は Steam のゲームフォルダーを自動検出します（入力を求められた場合は書き込み可能なゲームフォルダーのパスを貼り付けてください）。
-- **上段**の言語、次に**下段**の言語を番号で選びます：
-  - `1` = English（英語）
-  - `2` = 日本語
-  - `3` = 繁體中文（繁体字中国語）
-  - `4` = 简体中文（簡体字中国語）
-  - *例：「上段が日本語・下段が繁体字中国語」にしたい場合は `2` → `3` を選択します。*
-- 下段を選ぶとそのままインストールが始まります。
+## 方法 1 — ブラウザ Web パッチャー（一番簡単・CMD不要）
 
-### 4. ゲームを起動してテキスト言語を設定する
-- *Psycho-Sleuth* を起動し、ゲーム内のテキスト言語を **「日本語」** または **「繁體中文」** に設定してください。
-- どちらを選んでも、本ツールで指定した二言語字幕が表示されます。
+1. Steam 版の *Psycho-Sleuth* を**完全に終了**します。
+2. **Microsoft Edge** または **Google Chrome** で **[https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)** を開きます。
+3. **上段言語**と**下段言語**を選びます（右側のライブプレビューで見た目をすぐ確認できます）。
+4. **Psycho-Sleuth フォルダーを選択** をクリック（Steam でゲームを右クリック → 管理 → ローカルファイルを閲覧 でパス確認）し、編集許可を出してから **二言語字幕を適用する** を押します。
+5. Steam からゲームを起動し、ゲーム内テキスト言語を **「日本語」** または **「繁體中文」** にすると二言語字幕が表示されます。
+
+*（元に戻すとき：ゲーム終了後に同じページを開いてフォルダーを選び、**元の状態に復元する** をクリックするか、ZIP 版の `Restore.cmd` を使います。）*
+
+---
+
+## 方法 2 — オフライン ZIP かんたん導入（4ステップ）
+
+1. **ゲームを閉じて準備：** Windows Steam 版を用意して**完全に終了**し、Steam の自動更新設定は **起動時にのみこのゲームを更新** にしておくのが安全です。
+2. **ZIP を取得して展開：** [`v0.2.0-preview.1`](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1) から **`Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip`** を取得し、ZIP **全体**を書き込み可能なフォルダーへ展開します（`_tool` を残してください）。
+   *初回のみ `python.org` から約 12 MB・SHA-256 検証済みの署名入り公式 Python 実行環境を自動取得し、PC 本体の Python 環境は変更しません。*
+3. **`Install.cmd` をダブルクリックして2言語を選択：** 上段（`1` English · `2` 日本語 · `3` 繁體中文 · `4` 简体中文）、次に下段を選びます（例：`2 → 3` で上段が日本語・下段が繁体字中国語）。
+4. **ゲーム内言語を設定：** テキスト言語を **「日本語」** または **「繁體中文」** にすると二言語字幕が表示されます。
 
 ---
 
 ## 安心して使える理由
 
-- **中身を読めるスクリプトだけ（謎の `.exe` なし）：** `_tool\` 内はすべてテキスト／Python ソースで、実行前にメモ帳で確認できます。
-- **セーブデータも PC の Python も触らない：** Unity セーブ・PlayerPrefs・Steam クラウド・PC 本体の Python 環境には一切手を加えません。
-- **いつでも元に戻せる：** 変更前に検証済みの元ファイルを `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` へ保存します。**`Restore.cmd`** で 100% 復元でき、万が一のときも Steam の「ゲームファイルの整合性を確認」でいつでも復旧できます。
-- **SmartScreen が出たとき：** 署名のない `.cmd` のため青い警告画面（「Windows によって PC が保護されました」）が出る場合があります。公式 GitHub Release から取得したことを確認のうえ **「詳細情報」→「実行」** を押してください。
+- **Web 版は外部送信 0 バイト：** ファイルの読み取り・SHA-256 照合・合成はすべてブラウザタブ内で完結するため、ページ読み込み後にネットを切っても動作します。
+- **オフライン版は中身を読めるスクリプト中心：** `_tool\` 内はメモ帳で確認できるプレーンテキストで、実行バイナリは `python.org` の公式署名済み `python.exe`（SHA-256 一致時のみ起動）だけです。
+- **セーブデータも PC の Python も触らない：** Unity セーブ・PlayerPrefs・Steam クラウド・システム Python には一切触れず安全です。
+- **いつでも元通り：** 変更前に `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` へオリジナルを保存します。Web 版・`Restore.cmd`・Steam の「ゲームファイルの整合性を確認」のいずれでも確実に元に戻せます。
+- **SmartScreen / Smart App Control についての補足：** オフライン `.cmd` は未署名のため SmartScreen（「Windows によって PC が保護されました」→「詳細情報」→「実行」）や、Windows 11 の **Smart App Control** 環境では実行ボタンなしでブロックされることがあります。その場合はファイル不要の **[ブラウザ Web パッチャー](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)** をお使いいただくか、ZIP 展開前に「プロパティ」→「許可する（ブロック解除）」を行ってください。
 
 ---
 
 ## 日常の使い方・切り替え・復元
 
-- **言語の組み合わせや上下を変えたいとき：** ゲームを終了し、もう一度 **`Install.cmd`** をダブルクリックして選び直すだけです（元バックアップを自動再利用します）。
-- **元のゲーム状態に戻したいとき：** ゲームを終了し、**`Restore.cmd`** をダブルクリックします（`Install.cmd` 最初の画面で `R` を押しても復元できます）。復元が終わるまで `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` は削除しないでください。
-- **途中で中断してしまったとき：** ゲームは起動せず、再度 `Install.cmd` または `Restore.cmd` を実行すると安全に復旧します。
-- **Steam でゲームが更新されたとき：** **古いバックアップを新しいゲームファイルへ上書きコピーしないでください**。ハッシュ不一致で拒否された場合は Steam の**「ゲームファイルの整合性を確認」**を実行し、`.psycho-sleuth-subtitles` をゲームフォルダー外へ退避して対応版の公開をお待ちください。
-- **`0.1.0-preview.1` からのアップデート：** 新版 ZIP を別のフォルダーに展開し、そのまま新版 `Install.cmd` を実行してください（`.psycho-sleuth-subtitles` は残したままで大丈夫です）。*※ 0.2.0 では番号 `4` が簡体字中国語になりました。復元は `R` または `Restore.cmd` を使用してください。*
+- **組み合わせや上下の変更：** ゲームを終了し、Web パッチャーまたは `Install.cmd` から選び直すだけで元のバックアップを自動再利用して切り替わります。
+- **元のゲーム状態へ復元：** ゲーム終了後、Web 版の **元の状態に復元する** または **`Restore.cmd`**（`Install.cmd` で `R` でも可）を実行します。完了まで `.psycho-sleuth-subtitles/original` は残してください。
+- **中断時の復旧：** ゲームは起動せず、Web 版または `Install.cmd` / `Restore.cmd` を再実行すれば安全に復旧できます。
+- **Steam アップデート後：** **古いバックアップを新しいゲームへ上書きしないでください**。ハッシュ不一致で拒否された場合は Steam の整合性確認を行い、`.psycho-sleuth-subtitles` を退避して対応をお待ちください。
+- **`0.1.0-preview.1` からの更新：** そのまま Web 版または新版 `Install.cmd` を別フォルダーから実行してください（番号 `4` は簡体字中国語になったため、復元は `R` または `Restore.cmd` を使用）。
 
 ---
 
@@ -86,31 +94,25 @@ Steam 版 ***Psycho-Sleuth*（病能探偵 / 異病偵探 / 异病侦探）** �
 | `2 → 4` / `4 → 2` | 日本語 / 简体中文 | `ja-zh-Hans` / `zh-Hans-ja` |
 | `3 → 4` / `4 → 3` | 繁體中文 / 简体中文 | `zh-Hant-zh-Hans` / `zh-Hans-zh-Hant` |
 
-ダウンロードした ZIP 内の `docs/` フォルダーにも 4 言語のガイドが同梱されています。
-
 ---
 
 <details>
 <summary><strong>コマンドライン実行（任意）と SHA-256 確認</strong></summary>
 
-展開先のフォルダーで PowerShell またはコマンドプロンプトを開き、`Install.cmd` / `Restore.cmd` に直接引数を渡せます：
+オフライン版を展開したフォルダーで PowerShell やコマンドプロンプトから引数を指定できます：
 
 ```powershell
 # 任意のダウンロード SHA-256 確認
 Get-FileHash .\Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip
 
-# 対話メニュー
+# 対話メニュー / 引数指定（コード: en, ja, zh-Hant, zh-Hans）
 .\Install.cmd
-
-# 引数指定での実行（言語コード: en, ja, zh-Hant, zh-Hans）
 .\Install.cmd --pair en-ja
 .\Install.cmd --top ja --bottom zh-Hant
 .\Install.cmd --list-pairs
 .\Install.cmd --detect
 .\Install.cmd --status
 .\Install.cmd --game-dir "<game-folder>" --pair en-zh-Hant
-
-# 元の状態へバイト単位で復元
 .\Restore.cmd
 ```
 
@@ -124,17 +126,17 @@ Get-FileHash .\Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 500px)" srcset="assets/architecture-compact-dark.svg?v=5db98538903c646b">
-  <source media="(max-width: 500px)" srcset="assets/architecture-compact-light.svg?v=33e6f6571cfb70de">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/architecture-dark.svg?v=3baf536cab5b7ce6">
-  <img alt="4段階の安全パッチパイプライン：事前検証とSHA-256ランタイム、ジャーナル付きバックアップ、台本・動画22本のローカル合成、切替と完全復元" src="assets/architecture-light.svg?v=cb158551b91975e5">
+  <source media="(prefers-color-scheme: dark) and (max-width: 500px)" srcset="assets/architecture-compact-dark.svg?v=5f7c29179f1e34e8">
+  <source media="(max-width: 500px)" srcset="assets/architecture-compact-light.svg?v=3133d55cd17b0977">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/architecture-dark.svg?v=8333db78d688b9aa">
+  <img alt="4段階の安全パッチパイプライン：Webまたはオフライン事前検証、ジャーナル付きバックアップ、台本・動画22本合成、切替と完全復元" src="assets/architecture-light.svg?v=73720fef52917fa0">
 </picture>
 
 </div>
 
-1. **厳格な事前検証（`supported-build.json`）：** 変更前に Windows x64 Steam 版 IL2CPP ランタイム、Unity アセット、Addressables カタログのハッシュを確認し、未対応ビルドや他 MOD 導入環境では安全に停止します。
-2. **検証済みランタイムと復旧ジャーナル：** 初回のみ `python.org` から固定 SHA-256 の公式 Python 3.14.10 埋め込み版（約 12 MB）を取得して `_tool\python-runtime.zip` に保存し、起動ごとに検証して一時的な `%TEMP%` 環境で実行します（終了時に自動削除）。元ファイルは `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` に記録・保管されます。
-3. **音声・制御データを完全保持：** 本編セリフ、分岐選択肢、ローカライズ表、TextMeshPro サイズ設定、**動画字幕 22 本（`.srt`）** のみを更新し、ボイスセル（`157,099`）や字幕以外のオブジェクト（`10,858`）は一切変更しません。
+1. **厳格な事前検証：** Windows x64 Steam 版 IL2CPP ランタイム、Unity アセット、Addressables カタログのハッシュを照合し、未対応ビルドでは変更を行わず安全に停止します。
+2. **完全ローカル処理と互換バックアップ：** Web パッチャーは純 JS（UnityFS / LZMA1）でブラウザ内処理、オフライン版は固定 SHA-256 検証済み Python 3.14.10 で処理します。いずれも `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` と復旧ジャーナルを共有します。
+3. **音声・制御データを完全保持：** 本編セリフ、選択肢、ローカライズ表、TextMeshPro サイズ設定、**動画字幕 22 本（`.srt`）** のみを更新し、ボイスセル（Build `26746656` では `157,263`）や非字幕オブジェクト（`10,898`）はそのまま保持します。
 
 </details>
 
@@ -142,26 +144,28 @@ Get-FileHash .\Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip
 
 ## 対象範囲とプレビュー版の制限
 
-- **対象範囲：** シナリオ会話、分岐選択肢、**動画字幕 22 本（`.srt`）**。メニュー画面・キャラクター名・手がかり UI などはゲーム側で選んだ言語のまま表示されます。
-- **密度の高いページ：** 基本的には上下 2 段表示ですが、行数が多く枠に収まりにくい一部ページでは元のクリック感を保つため同一行に並記します（両言語が完全に同じ文字列の場合は 1 回のみ表示）。
-- **プロローグ動画と未翻訳行：** ゲーム原版のプロローグ動画に繁体字中国語 `.srt` が存在しないため、繁体字を含むペアではその区間のみもう片方の選択言語だけが表示されます（簡体字とのペアなら簡体字のみ表示）。片方の翻訳が欠けている会話行や、動画字幕の時間差がある区間でも一時的に片側表示や現在設定言語での表示になります。
-- **検証状況：** 隔離された実データを用いた自動テストでは **全 12 通りの表示順**、ペア切替、`0.1.0 -> 0.2.0` 更新、日本語／スペースを含むパス、音声・制御データ保持、完全復元まで合格しています。一方で長文折り返し・選択肢・英語/簡体字 UI フォント・実機動画の目視チェックは未完了のため、ゲーム内のテキスト言語設定は **「日本語」または「繁體中文」** をおすすめします。
+- **対象範囲：** シナリオ会話、分岐選択肢、**動画字幕 22 本（`.srt`）**。メニュー画面・キャラ名・手がかり UI はゲーム設定言語のままです。
+- **密度の高いページ：** 原則上下 2 段表示ですが、一部密なページはクリックリズム保持のため同一行に併記します（同一文字列は 1 回のみ表示）。
+- **プロローグ動画と未翻訳行：** ゲーム原版のプロローグ動画に繁体字 `.srt` が含まれないため、繁体字を含むペアではその区間のみもう片方の選択言語だけが表示されます。
+- **検証状況：** Web パッチャー・Python 版ともに隔離 Build `26746656` 実データで **全 12 通りのバイト完全一致**と相互復元まで合格していますが、全章を通じた長文折り返しや英語/簡体字フォントの実機目視チェックは引き続きプレビュー段階のため、ゲーム内テキスト言語は **「日本語」または「繁體中文」** をおすすめします。
 
 ---
 
 ## リリース状況
 
-> **Steam アップデート情報 (`2026-11-20`)：** Steam 版 *Psycho-Sleuth* が **Build `26746656`** へ更新されました。現在公開中の **`v0.2.0-preview.1`** は旧 Build `26481838` のみ対応しており、新しいビルドでは安全のためファイルを変更せず停止します。**`v0.2.0-preview.2`** はすでに **Build `26746656`** への対応と自動検証を完了しており、リリース公開待ちです。
+> **ブラウザ Web パッチャー公開中（最新 Steam Build `26746656` 対応）：** 黒い画面なし・ファイル取得不要の **[ブラウザ Web パッチャー](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)** なら Build `26746656` と `26481838` の両方へ今すぐ対応できます。
 
-- **現在公開中のダウンロード：`v0.2.0-preview.1`** — Steam Build `26481838` 向け（上記手順と 4 言語ガイドに対応）。
-- **次期候補：`v0.2.0-preview.2`（未公開）** — Steam **Build `26746656`** 対応済み。全 12 通りの自動検証・3 環境ユニットテスト・パッケージ CMD 導入/復元テストは完了し、実機での目視確認待ちです。詳細は [自動検証レポート](TESTING.md)・[5分間ビジュアル確認チェックリスト](VISUAL_QA.md)・[次期候補リリースノート](RELEASE_NOTES.md) をご覧ください。
+- **ブラウザ Web パッチャー（公開中）：** Edge / Chrome 上で Steam Build `26746656`・`26481838` に対応（Python 出力とバイト一致検証済み）。
+- **オフライン ZIP 現行公開版 (`v0.2.0-preview.1`)：** 旧 Build `26481838` 対応（Build `26746656` では未変更で安全停止）。
+- **次期オフライン ZIP 候補 (`v0.2.0-preview.2`・未公開)：** Build `26746656` 対応・自動テスト完了済み、実機目視確認待ち。詳細は [TESTING.md](TESTING.md)・[VISUAL_QA.md](VISUAL_QA.md)・[RELEASE_NOTES.md](RELEASE_NOTES.md) をご覧ください。
 
 ---
 
 ## サポート・貢献・利用条件
 
-- 困ったときや Steam 更新で動かなくなったときは [SUPPORT.md](SUPPORT.md) を確認するか、[GitHub Issues](https://github.com/snowyukitty/psycho-sleuth-subtitles/issues) からご報告ください。
-- 翻訳やドキュメント改善への協力は [CONTRIBUTING.md](CONTRIBUTING.md) と [行動規範 (CODE_OF_CONDUCT.md)](CODE_OF_CONDUCT.md) をご確認ください。
-- セキュリティに関するご連絡は [SECURITY.md](SECURITY.md)、変更履歴は [CHANGELOG.md](CHANGELOG.md) をご覧ください。
+- 困ったときや Steam 更新後は [SUPPORT.md](SUPPORT.md) または [GitHub Issues](https://github.com/snowyukitty/psycho-sleuth-subtitles/issues) へどうぞ。
+- 翻訳や改善提案は [CONTRIBUTING.md](CONTRIBUTING.md)・[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)、セキュリティ連絡は [SECURITY.md](SECURITY.md)、履歴は [CHANGELOG.md](CHANGELOG.md) をご覧ください。
 
-同梱の [LICENSE](LICENSE) に基づき無料でダウンロードし、個人の導入・バックアップ用途にご利用いただけます（その他の権利は留保されており、MIT 等のオープンソースライセンスではありません）。再配布は控え、このリポジトリまたは [公式リリースページ](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases) のリンクをご共有ください。本ツールは非公式でありゲーム制作者とは無関係です。正規に購入・インストールされた Steam 版 *Psycho-Sleuth* が必要です。同梱・取得される公式埋め込み版 Python には Python 自体のライセンスが適用されます。
+*検索キーワード:* *病能探偵* · *Psycho-Sleuth* · *異病偵探* · *异病侦探* · Steam 二言語字幕パッチ · 語学学習ツール · ブラウザ Web パッチャー。
+
+同梱の [LICENSE](LICENSE) に基づき個人の導入・バックアップ用途に限り無料利用可能です（MIT 等のオープンソースではありません）。再配布は控え、このリポジトリ・[Web パッチャー](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)・[公式リリースページ](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)のリンクをご共有ください。

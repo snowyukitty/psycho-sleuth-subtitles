@@ -15,6 +15,7 @@ Need help installing, switching subtitle pairs, or recovering ***Psycho-Sleuth* 
 
 | Symptom | Likely Cause | Recommended Fix |
 | --- | --- | --- |
+| **Prefer zero CMD or blocked by Smart App Control?** | Offline `.cmd` launchers trigger Windows prompts or Smart App Control blocks on some Windows 11 PCs. | Use the **[Browser Web Patcher](https://snowyukitty.github.io/psycho-sleuth-subtitles/)** in Microsoft Edge or Google Chrome (zero `.cmd`, zero `.exe`, zero downloads; uses the same `.psycho-sleuth-subtitles` backups). Or right-click the downloaded ZIP → **Properties → Unblock** before extracting. |
 | *"Game appears to be running"* | *Psycho-Sleuth* is still open (or closing in background). | Close the game completely in Steam / Task Manager and rerun `Install.cmd`. |
 | Auto-detection misses custom library or need state check | Game is installed in a non-standard folder or you want to verify installed backups. | Run `.\Install.cmd --detect` to inspect Steam detection, `.\Install.cmd --status` to check receipt status, or pass `--game-dir "<game-folder>"`. |
 | Installer stalls before its menu | Network or security software prevents downloading the `~12 MB` official Python runtime from `python.org`. | Check the download error and network access to `python.org`, then retry. SHA-256 is verified automatically; do not bypass it. |

@@ -1,6 +1,6 @@
-# v0.2.0-preview.2 candidate — not yet published
+# v0.2.0-preview.2 candidate — Web Patcher live, offline ZIP awaiting Visual QA
 
-The current downloadable version is [v0.2.0-preview.1](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1). These notes describe the next candidate. The guides linked below describe the published version; candidate guides will ship with its ZIP.
+> **New:** You can already use the **[Browser Web Patcher](https://snowyukitty.github.io/psycho-sleuth-subtitles/)** in Microsoft Edge or Chrome with zero CMD windows to patch Steam **Build `26746656`** (`2026-11-20`) and **Build `26481838`** today (0 bytes uploaded; interoperable `.psycho-sleuth-subtitles` backups). The downloadable offline ZIP release remains [v0.2.0-preview.1](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1) while `v0.2.0-preview.2` ZIP visual QA completes.
 
 ## Four languages, six pairs, twelve orders
 

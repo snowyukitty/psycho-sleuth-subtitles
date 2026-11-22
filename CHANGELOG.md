@@ -6,12 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-No changes queued.
+- **GitHub UI / UX / Promotion / SEO refresh (`2026-11-23`):** Added `og-card.png`, `favicon.svg`, `sitemap.xml`, `robots.txt`, `hreflang` alternates, and Schema.org JSON-LD (`SoftwareApplication` + `FAQPage`), refreshed hero & architecture SVGs, promoted the zero-CMD Browser Web Patcher across all four localized READMEs and compact guides, and integrated Claude Opus 5.5 pre-release documentation clarifications (Smart App Control vs SmartScreen, signed `python.exe` wording, Steam update setting naming).
 
-## [0.2.0-preview.2] — Pending Visual QA
+## [0.2.0-preview.2] — Web Patcher Live / Offline ZIP Pending Visual QA
 
 ### Added
 
+- **Browser Web Patcher via GitHub Pages (`docs/`):** 100% local Edge/Chrome File System Access API patcher (`unityfs.js`, pure-JS raw LZMA1 `lzma-dec.js`, Unicode EAW `eaw-table.js`, `subtitles-core.js`, `fs-installer.js`, `builds.js`, `i18n.js`, `selftest.mjs`) supporting both Steam **Build `26746656`** (`2026-11-20`) and **Build `26481838`** (`2026-11-10`) with zero `.cmd`, zero `.exe`, zero downloads, interactive live preview, dark/light Case-File Noir themes, and 100% `.psycho-sleuth-subtitles/` interoperability with `Restore.cmd`.
 - **Steam Build `26746656` support (`2026-11-20` game update):** Updated `supported-build.json`, the Addressables video subtitle bundle target, and `SubtitlesUGUIVideoPlayer` object reference (`path_id = 50511`) so the tool matches the current official Steam build.
 
 ### Improved

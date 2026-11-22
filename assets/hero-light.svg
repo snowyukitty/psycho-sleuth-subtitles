@@ -14,29 +14,29 @@
     <rect x="320" y="256" width="384" height="128" rx="48" fill="#F8FAFC"/>
   </g>
 
-  <rect x="148" y="50" width="212" height="26" rx="13" fill="#FFE4E6"/>
-  <text x="254" y="67" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.4" fill="#BE123C">WINDOWS X64 · STEAM TOOL</text>
+  <rect x="148" y="50" width="276" height="26" rx="13" fill="#FFE4E6"/>
+  <text x="286" y="67" text-anchor="middle" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="12" font-weight="700" letter-spacing="0.4" fill="#BE123C">WEB PATCHER (ZERO CMD) · WINDOWS</text>
 
   <text x="148" y="113" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="30" font-weight="800" fill="#0F172A">Psycho-Sleuth Dual Subtitles</text>
 
-  <text x="48" y="172" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16.5" font-weight="500" fill="#475569">Combine any two built-in tracks — story dialogue, choices,</text>
-  <text x="48" y="198" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16.5" font-weight="500" fill="#475569">and 22 cutscene videos. Local-only; zero API keys or uploads.</text>
+  <text x="48" y="172" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16" font-weight="500" fill="#475569">Pair any 2 built-in tracks in Edge/Chrome (zero CMD) or offline</text>
+  <text x="48" y="198" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16" font-weight="500" fill="#475569">ZIP — story dialogue, choices &amp; 22 cutscenes. Zero uploads.</text>
 
   <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="13" font-weight="600">
-    <rect x="48" y="230" width="182" height="34" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="48" y="230" width="180" height="34" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
     <circle cx="65" cy="247" r="4.5" fill="#FB4D64"/>
-    <text x="78" y="252" fill="#1E293B">4 Languages · 12 Orders</text>
+    <text x="78" y="252" fill="#1E293B">Browser Web Patcher</text>
 
-    <rect x="240" y="230" width="194" height="34" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
-    <circle cx="257" cy="247" r="4.5" fill="#0284C7"/>
-    <text x="270" y="252" fill="#1E293B">EN · 日本語 · 繁體 · 简体</text>
+    <rect x="238" y="230" width="198" height="34" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <circle cx="255" cy="247" r="4.5" fill="#0284C7"/>
+    <text x="268" y="252" fill="#1E293B">EN · 日本語 · 繁體 · 简体</text>
 
-    <rect x="444" y="230" width="178" height="34" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
-    <circle cx="461" cy="247" r="4.5" fill="#10B981"/>
-    <text x="474" y="252" fill="#1E293B">Byte-Exact Restore</text>
+    <rect x="446" y="230" width="176" height="34" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <circle cx="463" cy="247" r="4.5" fill="#10B981"/>
+    <text x="476" y="252" fill="#1E293B">Byte-Exact Restore</text>
   </g>
 
-  <text x="48" y="308" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12.5" fill="#64748B">Install.cmd → Pick Top → Pick Bottom  ·  Rollback: Restore.cmd</text>
+  <text x="48" y="308" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12" fill="#64748B">Web: Select Folder → Apply  ·  Offline: Install.cmd / Restore.cmd</text>
 
   <!-- Right preview card: Dual-track dialogue mock -->
   <rect x="646" y="42" width="510" height="276" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1.5"/>

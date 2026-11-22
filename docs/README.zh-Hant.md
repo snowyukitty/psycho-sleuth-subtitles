@@ -4,22 +4,22 @@
 
 這是非官方的 **Windows x64 預覽版**工具，使用遊戲本機既有的官方翻譯組合雙語字幕。不用加配音、不需要 API key、不用 Mod Loader，也不會上傳遊戲文字。
 
-> **Steam 版本補充：** 目前已發佈的 `v0.2.0-preview.1` 僅對應 Steam Build `26481838`（在新版遊戲上會安全拒絕寫入而不改動檔案）；對應 Steam **Build `26746656`（`2026-11-20`）** 的支援將在 `v0.2.0-preview.2` 推出。
+> **最推薦（免開黑窗 CMD）：** 直接用 Microsoft Edge / Chrome 開啟 **[網頁一鍵安裝器](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant)**，即可於本機同時支援 Steam **Build `26746656`**（`2026-11-20` 更新）與 **Build `26481838`**（免下載、0 上傳）。目前發佈的離線 ZIP `v0.2.0-preview.1` 僅對應 Build `26481838`，Build `26746656` 離線包將於 `v0.2.0-preview.2` 推出。
 
 ## 最簡安裝步驟（4 步搞定）
 
-1. **關閉遊戲：** 確認已在 Windows 的 Steam 裝好 *Psycho-Sleuth*，**完全關閉遊戲**並暫停 Steam 自動更新。
+1. **關閉遊戲：** 確認已在 Windows 的 Steam 裝好 *Psycho-Sleuth*，**完全關閉遊戲**並建議設為「僅在啟動遊戲時更新」。
 2. **下載並解壓縮：** 從 [`v0.2.0-preview.1` Release](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1) 下載 **Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip**，將整個 ZIP 解壓到可寫入的資料夾（務必保留 `_tool` 與 `Install.cmd`、`Restore.cmd` 在一起）。
-   *不需要自己裝 Python — 首次執行會自動從 `python.org` 下載約 12 MB、經 SHA-256 驗證的官方 Python 3.14.10 嵌入版快取於 `_tool\python-runtime.zip`，於獨立 `%TEMP%` 目錄執行後清除，不改動系統原本的 Python。*
+   *不需要自己裝 Python — 首次執行會自動從 `python.org` 下載約 12 MB、經 SHA-256 驗證的官方簽章 Python 3.14.10 嵌入版快取於 `_tool\python-runtime.zip`，於獨立 `%TEMP%` 目錄執行後清除，不改動系統原本的 Python。*
 3. **雙擊 `Install.cmd` 選兩種語言：** 通常會自動找到 Steam 遊戲資料夾（找不到時貼上遊戲資料夾路徑即可）。先選**上方字幕**、再選**下方字幕**（`1` English · `2` 日本語 · `3` 繁體中文 · `4` 简体中文；例如 `2 → 3` 為日文在上、繁中在下）。選完下方語言立即開始安裝；第一畫面按 **R** 還原、**0** 離開，第二畫面按 **0** 返回。
 4. **開遊戲設定文字語言：** 啟動遊戲後，將遊戲內文字語言設為 **「繁體中文」** 或 **「日文」**，對話就會顯示你選好的雙語字幕。
 
 ## 為什麼可以放心使用
 
-- **純明文腳本，沒有黑箱 `.exe`：** `_tool\` 裡全部都是可用記事本檢視的原始腳本。
+- **純明文腳本與官方驗證運行檔：** `_tool\` 裡全部都是可用記事本檢視的原始腳本，唯一執行的程式是從 `python.org` 取得並通過 SHA-256 檢查的官方簽章 `python.exe`。
 - **不碰存檔與系統環境：** 不會讀取或改動 Unity 存檔、Steam 雲端存檔，也不影響系統 Python。
-- **隨時一鍵還原：** 修改前會在 `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` 保存位元組原版備份，`Restore.cmd` 可 100% 還原，Steam「驗證遊戲檔案的完整性」也能隨時兜底。
-- **SmartScreen 提醒：** 下載的 `.cmd` 因無數位簽章可能跳出藍色提示，確認來自官方 GitHub Release 後點 **「其他資訊」→「仍要執行」** 即可。
+- **隨時一鍵還原：** 修改前會在 `Psycho Sleuth_Data/.psycho-sleuth-subtitles/original` 保存位元組原版備份（與網頁安裝器完全互通），`Restore.cmd` 可 100% 還原，Steam「驗證遊戲檔案的完整性」也能隨時兜底。
+- **SmartScreen / Smart App Control 提醒：** 下載的 `.cmd` 若跳出 SmartScreen 藍框請點 **「其他資訊」→「仍要執行」**。若電腦已開啟 **Smart App Control** 而直接禁止執行下載腳本，請改用免下載的 **[網頁一鍵安裝器](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant)**，或在解壓前對 ZIP 右鍵 → **內容 → 解除封鎖**。
 
 ## 日常切換與還原
 

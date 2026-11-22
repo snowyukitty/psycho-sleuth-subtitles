@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://snowyukitty.github.io/psycho-sleuth-subtitles/sitemap.xml

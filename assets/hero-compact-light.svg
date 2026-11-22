@@ -12,15 +12,15 @@
     <rect x="320" y="256" width="384" height="128" rx="48" fill="#F8FAFC"/>
   </g>
   <text x="102" y="52" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="25" font-weight="800" fill="#0F172A">Psycho-Sleuth Dual Subtitles</text>
-  <text x="102" y="78" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="14.5" font-weight="600" fill="#475569">4 Languages · 6 Pairs · 12 Orders (Windows x64)</text>
+  <text x="102" y="78" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="14" font-weight="600" fill="#475569">Browser Web Patcher (Zero CMD) · 4 Languages · 12 Orders</text>
 
   <g font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="12.5" font-weight="700">
     <rect x="24" y="106" width="176" height="32" rx="8" fill="#FFE4E6"/>
     <text x="112" y="126.5" text-anchor="middle" fill="#BE123C">EN · 日本語 · 繁體 · 简体</text>
     <rect x="208" y="106" width="184" height="32" rx="8" fill="#E0F2FE"/>
-    <text x="300" y="126.5" text-anchor="middle" fill="#0369A1">Verified Local Backup</text>
+    <text x="300" y="126.5" text-anchor="middle" fill="#0369A1">Edge / Chrome (No CMD)</text>
     <rect x="400" y="106" width="176" height="32" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
-    <text x="488" y="126.5" text-anchor="middle" fill="#1E293B">No API Keys / Uploads</text>
+    <text x="488" y="126.5" text-anchor="middle" fill="#1E293B">0 Bytes Uploaded</text>
   </g>
 
   <rect x="24" y="154" width="552" height="170" rx="14" fill="#0F172A" stroke="#1E293B" stroke-width="1.5"/>
@@ -29,5 +29,5 @@
   <text x="44" y="220" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="18.5" font-weight="700" fill="#F8FAFC">Inspect the torn case ledger again.</text>
   <text x="44" y="250" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei UI', 'Meiryo', sans-serif" font-size="16.5" font-weight="600" fill="#7DD3FC">破れた事件簿をもう一度確認しよう。</text>
   <line x1="44" y1="270" x2="556" y2="270" stroke="#1E293B" stroke-width="1"/>
-  <text x="44" y="298" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12.5" font-weight="600" fill="#94A3B8">Install.cmd (switch anytime) · Restore.cmd (exact rollback)</text>
+  <text x="44" y="298" font-family="'JetBrains Mono', Consolas, 'Courier New', monospace" font-size="12" font-weight="600" fill="#94A3B8">Web: Select Folder → Apply  ·  Offline: Install.cmd / Restore.cmd</text>
 </svg>
