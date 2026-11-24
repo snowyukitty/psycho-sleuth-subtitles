@@ -1,8 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="14" fill="#0B0F17"/>
-  <rect x="14" y="34" width="42" height="20" rx="5" fill="#0284C7"/>
-  <rect x="22" y="41" width="26" height="6" rx="3" fill="#E0F2FE"/>
-  <rect x="6" y="10" width="42" height="22" rx="5" fill="#1E293B"/>
-  <path d="M11 10H18V32H11C8.239 32 6 29.761 6 27V15C6 12.239 8.239 10 11 10Z" fill="#FB4D64"/>
-  <rect x="22" y="18" width="20" height="6" rx="3" fill="#F8FAFC"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>Psycho-Sleuth Dual Subtitles Mark</title>
+  <!-- Upper primary dialogue flag: warm coral cut-paper ribbon snapped strictly to 64u grid (y=64..448) -->
+  <path fill="#E25B45" d="M 192 64 H 768 A 64 64 0 0 1 832 128 V 256 A 64 64 0 0 1 768 320 H 320 L 128 448 V 128 A 64 64 0 0 1 192 64 Z"/>
+  <rect x="256" y="128" width="448" height="128" rx="32" fill="#F6EEDC"/>
+
+  <!-- Lower secondary dialogue flag: cobalt cut-paper ribbon snapped strictly to 64u grid (y=576..960) -->
+  <path fill="#335EB8" d="M 256 576 H 832 A 64 64 0 0 1 896 640 V 960 L 704 832 H 256 A 64 64 0 0 1 192 768 V 640 A 64 64 0 0 1 256 576 Z"/>
+  <rect x="320" y="640" width="448" height="128" rx="32" fill="#9ED8C3"/>
 </svg>

@@ -1,13 +1,16 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Psycho-Sleuth Dual Subtitles — Zero-CMD Browser Web Patcher (EN / 日本語 / 繁體 / 简体)</title>
-  <meta name="description" content="Free local Browser Web Patcher for Steam's Psycho-Sleuth (病能探偵 / 異病偵探 / 异病侦探). Pair any 2 of English, Japanese, Traditional & Simplified Chinese across 12 orders inside Edge or Chrome — zero CMD, zero uploads, byte-exact restore.">
+  <title>Psycho-Sleuth Dual Subtitles — 4-Step Illustrated Guide &amp; Local Web Patcher</title>
+  <meta name="description" content="Follow 4 simple picture steps to add dual subtitles (English, 日本語, 繁體中文, 简体中文) to Steam's Psycho-Sleuth directly in Edge or Chrome — zero black CMD windows, zero uploads, 1-click restore.">
   <meta name="keywords" content="Psycho-Sleuth, 病能探偵, 異病偵探, 异病侦探, dual subtitles, bilingual subtitles, web patcher, Steam, Japanese learning, visual novel, 雙字幕, 二言語字幕">
-  <meta name="theme-color" content="#0b0f17">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="theme-color" content="#F6EEDC">
+  <link rel="icon" href="./favicon.ico" sizes="32x32">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
   <link rel="canonical" href="https://snowyukitty.github.io/psycho-sleuth-subtitles/">
   <link rel="alternate" hreflang="x-default" href="https://snowyukitty.github.io/psycho-sleuth-subtitles/">
   <link rel="alternate" hreflang="en" href="https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=en">
@@ -16,15 +19,15 @@
   <link rel="alternate" hreflang="zh-Hans" href="https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hans">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Psycho-Sleuth Dual Subtitles — Zero-CMD Browser Web Patcher">
-  <meta property="og:description" content="Pair English, 日本語, 繁體中文 & 简体中文 (6 pairs, 12 orders) locally in Microsoft Edge or Chrome. Zero terminal windows, zero uploads, byte-exact restore.">
+  <meta property="og:title" content="Psycho-Sleuth Dual Subtitles — 4-Step Illustrated Guide &amp; Web Patcher">
+  <meta property="og:description" content="See 4 simple illustrated steps and pair English, 日本語, 繁體中文 &amp; 简体中文 locally in Edge or Chrome — zero CMD, zero uploads, 1-click restore.">
   <meta property="og:url" content="https://snowyukitty.github.io/psycho-sleuth-subtitles/">
   <meta property="og:image" content="https://snowyukitty.github.io/psycho-sleuth-subtitles/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Psycho-Sleuth Dual Subtitles — Browser Web Patcher">
-  <meta name="twitter:description" content="Zero-CMD local dual subtitles for Steam Psycho-Sleuth (病能探偵 / 異病偵探).">
+  <meta name="twitter:title" content="Psycho-Sleuth Dual Subtitles — Illustrated 4-Step Web Patcher">
+  <meta name="twitter:description" content="4 simple steps, zero CMD, 100% local dual subtitles for Steam Psycho-Sleuth.">
   <meta name="twitter:image" content="https://snowyukitty.github.io/psycho-sleuth-subtitles/og-card.png">
 
   <script type="application/ld+json">
@@ -50,24 +53,13 @@
         }
       },
       {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Does the Psycho-Sleuth Web Patcher upload game files or require Command Prompt?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. All reading, SHA-256 verification, dual-subtitle patching, and restoration happen 100% locally inside Microsoft Edge or Google Chrome with zero CMD windows and zero network uploads."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I restore original Steam files safely?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Unmodified originals are saved locally under Psycho Sleuth_Data/.psycho-sleuth-subtitles/original and can be restored byte-for-byte with one click in this page, Restore.cmd, or Steam's Verify integrity of game files."
-            }
-          }
+        "@type": "HowTo",
+        "name": "Add Dual Subtitles to Psycho-Sleuth in 4 Steps",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Close Psycho-Sleuth first and open Edge or Chrome" },
+          { "@type": "HowToStep", "position": 2, "name": "Choose any two official subtitle languages (Top and Bottom)" },
+          { "@type": "HowToStep", "position": 3, "name": "Select your Steam Psycho-Sleuth folder and click Apply" },
+          { "@type": "HowToStep", "position": 4, "name": "Launch the game and enjoy — or restore originals anytime" }
         ]
       }
     ]
@@ -76,12 +68,19 @@
   <link rel="stylesheet" href="patcher/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#patcher">Skip to Web Patcher</a>
+
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top">
-        <img src="favicon.svg" alt="Psycho-Sleuth Dual Subtitles icon" width="30" height="30">
-        <span data-i18n="brandSub">Psycho-Sleuth Dual Subtitles · Web Patcher</span>
+        <img src="./favicon.svg" alt="Psycho-Sleuth Dual Subtitles mark" width="28" height="28">
+        <span data-i18n="brandSub">Psycho-Sleuth Dual Subtitles</span>
       </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#steps" data-i18n="navSteps">4 Visual Steps</a>
+        <a href="#patcher" data-i18n="navPatcher">Web Patcher</a>
+        <a href="#safety" data-i18n="navSafety">FAQ &amp; Pairs</a>
+      </nav>
       <div class="nav-controls">
         <div class="lang-group" role="group" aria-label="Interface language">
           <button type="button" class="lang-pill" data-ui-lang="en">EN</button>
@@ -90,8 +89,8 @@
           <button type="button" class="lang-pill" data-ui-lang="zh-Hans">简体</button>
         </div>
         <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle color theme">
-          <span id="themeIcon" aria-hidden="true">☀</span>
-          <span id="themeLabel" data-i18n="themeLight">Light</span>
+          <span id="themeIcon" aria-hidden="true">☾</span>
+          <span id="themeLabel" data-i18n="themeDark">Night Desk</span>
         </button>
         <a class="icon-btn" href="https://github.com/snowyukitty/psycho-sleuth-subtitles" target="_blank" rel="noopener">
           <span data-i18n="githubLink">GitHub</span>
@@ -101,23 +100,28 @@
   </header>
 
   <main id="top" class="container">
+    <!-- Hero -->
     <section class="hero">
       <div>
-        <div class="eyebrow" data-i18n="badgeLocal">ZERO CMD · ZERO DOWNLOAD · 100% IN-BROWSER</div>
-        <h1 data-i18n="heroTitle">Pair Any 2 Subtitle Languages for Psycho-Sleuth</h1>
-        <p class="hero-lead" data-i18n="heroLead">No terrifying black terminal windows, no unknown executables, no server uploads. Pair official English, Japanese, Traditional Chinese &amp; Simplified Chinese directly inside Microsoft Edge or Google Chrome.</p>
+        <div class="eyebrow" data-i18n="badgeLocal">ZERO CMD · ZERO DOWNLOAD · 100% LOCAL</div>
+        <h1 data-i18n="heroTitle">Read Any Two Languages Side by Side in Psycho-Sleuth</h1>
+        <p class="hero-lead" data-i18n="heroLead">No scary black terminal windows, no unknown executables. Just follow 4 short picture steps in Edge or Chrome to pair English, Japanese, Traditional Chinese, or Simplified Chinese.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#patcher" data-i18n="ctaStartPatcher">Start Patching Now</a>
+          <a class="btn btn-secondary" href="#steps" data-i18n="ctaSeeSteps">See 4 Picture Steps</a>
+        </div>
         <div class="pill-row">
-          <span class="meta-pill"><span class="dot dot-crimson"></span><span data-i18n="pillLangs">4 Languages · 6 Pairs · 12 Orders</span></span>
-          <span class="meta-pill"><span class="dot dot-cyan"></span><span data-i18n="pillBuilds">Steam Builds 26746656 &amp; 26481838</span></span>
-          <span class="meta-pill"><span class="dot dot-emerald"></span><span data-i18n="pillRestore">Byte-Exact 1-Click Restore</span></span>
+          <span class="meta-pill"><span class="dot dot-coral"></span><span data-i18n="pillNoCmd">No Black Terminal Windows</span></span>
+          <span class="meta-pill"><span class="dot dot-cobalt"></span><span data-i18n="pillNoUpload">Files Never Leave Your PC</span></span>
+          <span class="meta-pill"><span class="dot dot-mint"></span><span data-i18n="pillRestore">1-Click Safe Restore</span></span>
         </div>
       </div>
 
       <div class="stage-card" aria-live="polite">
         <div class="stage-bar">
-          <span class="stage-title" data-i18n="previewHeader">LIVE IN-GAME SUBTITLE PREVIEW</span>
+          <span class="stage-title" data-i18n="previewHeader">LIVE SUBTITLE PREVIEW</span>
           <div class="stage-tabs" role="tablist">
-            <button type="button" class="stage-tab active" data-preview-mode="dialogue" data-i18n="previewModeDialogue">Story Dialogue</button>
+            <button type="button" class="stage-tab active" data-preview-mode="dialogue" data-i18n="previewModeDialogue">Story Box</button>
             <button type="button" class="stage-tab" data-preview-mode="cutscene" data-i18n="previewModeCutscene">Cutscene .SRT</button>
           </div>
         </div>
@@ -131,155 +135,285 @@
             <div class="line-bottom" id="previewLineBottom">再確認一次鐘樓下方那本被撕破的案件簿吧。</div>
           </div>
           <div class="stage-foot">
-            <span data-i18n="previewSwapNote">Updates live as you change Step 1 languages</span>
+            <span data-i18n="previewSwapNote">Updates as you pick languages below</span>
             <span id="previewPairCode">ja-zh-Hant</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="browserWarning" class="notice-banner hidden" role="status">
-      <div>
-        <h3 data-i18n="unsupportedBrowserTitle">Open this page in Microsoft Edge or Google Chrome on Windows</h3>
-        <p data-i18n="unsupportedBrowserBody">Direct local folder patching uses the browser File System Access API (built into Edge &amp; Chrome on Windows 10/11). Your game files never leave your computer.</p>
+    <!-- Section 1: 4 Illustrated Picture Steps (wsa-014 alternating plate rows) -->
+    <section id="steps" class="section-block" aria-labelledby="stepsHeading">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="stepsEyebrow">ILLUSTRATED GUIDE · 4 SIMPLE STEPS</div>
+        <h2 class="section-title" id="stepsHeading" data-i18n="stepsHeading">Follow These 4 Pictures — Done in 1 Minute</h2>
+        <p class="section-lead" data-i18n="stepsSubhead">Everything runs safely right inside this browser tab. Nothing gets uploaded.</p>
       </div>
-      <div class="notice-actions">
-        <button type="button" class="btn btn-cyan" id="copyUrlBtn" data-i18n="copyUrlBtn">Copy Page URL</button>
-        <a class="btn btn-secondary" href="https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1" target="_blank" rel="noopener" data-i18n="offlineFallbackLink">Or download Offline ZIP tool</a>
-      </div>
-    </section>
 
-    <section class="wizard-grid" aria-label="Dual-subtitle installation steps">
-      <!-- Step 1 -->
-      <article class="step-card step-1">
-        <h2 data-i18n="step1Title">1. Choose Subtitle Order</h2>
-        <p class="step-hint" data-i18n="step1Hint">Pick the top (primary) line and bottom (clue-blue) learning line.</p>
-
-        <div class="field">
-          <label for="topSelect" data-i18n="labelTop">Top Line (Primary)</label>
-          <select id="topSelect" class="lang-select">
-            <option value="en">1 · English</option>
-            <option value="ja" selected>2 · 日本語 (Japanese)</option>
-            <option value="zh-Hant">3 · 繁體中文</option>
-            <option value="zh-Hans">4 · 简体中文</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="bottomSelect" data-i18n="labelBottom">Bottom Line (Secondary)</label>
-          <select id="bottomSelect" class="lang-select">
-            <option value="en">1 · English</option>
-            <option value="ja">2 · 日本語 (Japanese)</option>
-            <option value="zh-Hant" selected>3 · 繁體中文</option>
-            <option value="zh-Hans">4 · 简体中文</option>
-          </select>
-        </div>
-
-        <button type="button" class="btn btn-secondary" id="swapBtn">
-          <span aria-hidden="true">⇄</span>
-          <span data-i18n="swapBtn">Swap Top / Bottom</span>
-        </button>
-
-        <div class="preset-row">
-          <span class="preset-label" data-i18n="presetsLabel">Popular presets:</span>
-          <button type="button" class="chip-btn" data-preset="ja-zh-Hant" data-i18n="presetJaZhHant">JA + 繁中</button>
-          <button type="button" class="chip-btn" data-preset="ja-en" data-i18n="presetJaEn">JA + EN</button>
-          <button type="button" class="chip-btn" data-preset="en-zh-Hant" data-i18n="presetEnZhHant">EN + 繁中</button>
-          <button type="button" class="chip-btn" data-preset="ja-zh-Hans" data-i18n="presetJaZhHans">JA + 简中</button>
-        </div>
-      </article>
-
-      <!-- Step 2 -->
-      <article class="step-card step-2">
-        <h2 data-i18n="step2Title">2. Select Game Folder &amp; Verify</h2>
-        <p class="step-hint" data-i18n="step2Hint">Close Psycho-Sleuth first. In Steam: Right-click game -&gt; Manage -&gt; Browse local files, then pick that Psycho-Sleuth folder.</p>
-
-        <button type="button" class="btn btn-cyan" id="pickDirBtn">
-          <span aria-hidden="true">📁</span>
-          <span id="pickDirLabel" data-i18n="pickFolderBtn">Select Psycho-Sleuth Folder</span>
-        </button>
-
-        <details class="helper-tip">
-          <summary data-i18n="howToFindTitle">Where is my game folder?</summary>
-          <p data-i18n="howToFindBody">Open Steam -&gt; Right-click Psycho-Sleuth -&gt; Manage -&gt; Browse local files. Copy or note that folder path, click "Select Psycho-Sleuth Folder" above, choose it, and click "Edit files" when Edge/Chrome asks for permission.</p>
-        </details>
-
-        <div class="status-panel" id="folderStatusPanel">
-          <div class="status-line" id="folderStatusEmpty" data-i18n="folderNone">No game folder selected yet.</div>
-          <div id="folderStatusDetails" class="hidden">
-            <div class="status-badge" id="folderStatusBadge">-</div>
-            <div class="status-line" id="folderNameLine">-</div>
-            <div class="status-line" id="buildIdLine">-</div>
-            <div class="status-line" id="runtimeCheckLine">-</div>
-            <div class="status-line" id="backupCheckLine">-</div>
+      <div class="story-list">
+        <!-- Row 1: plate left, text right -->
+        <article class="story-row">
+          <figure class="plate-figure">
+            <div class="plate-frame">
+              <img src="./illustrations/step-1-close.png" width="960" height="720" decoding="async" alt="Closed cobalt game book resting beside a clean open browser window previewing twin subtitle bars">
+            </div>
+            <figcaption class="plate-caption" data-i18n="step1Cap">FIG. 01 — CLOSE THE GAME &amp; OPEN EDGE OR CHROME</figcaption>
+          </figure>
+          <div class="story-copy">
+            <div class="step-seal-row">
+              <svg class="step-seal-svg" viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="20" r="18" fill="#E25B45"/>
+                <text x="20" y="25" text-anchor="middle" fill="#FBF7EC" font-family="Georgia, serif" font-size="16" font-weight="700">01</text>
+              </svg>
+              <span class="step-badge-text">STEP 01</span>
+            </div>
+            <h3 data-i18n="step1VisualTitle">1. Close Psycho-Sleuth first</h3>
+            <p data-i18n="step1VisualBody">Make sure the game is completely closed, then keep this page open in Microsoft Edge or Google Chrome on Windows.</p>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Step 3 -->
-      <article class="step-card step-3">
-        <h2 data-i18n="step3Title">3. Apply or Restore</h2>
-        <p class="step-hint" data-i18n="step3Hint">Your clean originals are backed up inside Psycho Sleuth_Data/.psycho-sleuth-subtitles/original before any edit.</p>
-
-        <button type="button" class="btn btn-primary" id="applyBtn" disabled>
-          <span aria-hidden="true">✨</span>
-          <span id="applyBtnLabel" data-i18n="applyBtn">Apply Dual Subtitles</span>
-        </button>
-
-        <button type="button" class="btn btn-restore" id="restoreBtn" disabled>
-          <span aria-hidden="true">↩</span>
-          <span data-i18n="restoreBtn">Restore Original Files</span>
-        </button>
-
-        <div class="progress-wrap">
-          <div class="progress-track">
-            <div class="progress-fill" id="progressBar"></div>
+        <!-- Row 2: flipped on desktop -> text left, plate right -->
+        <article class="story-row is-flipped">
+          <figure class="plate-figure">
+            <div class="plate-frame">
+              <img src="./illustrations/step-2-languages.png" width="960" height="720" decoding="async" alt="Stacked cobalt primary and mint secondary cut-paper dialogue cards with curved swap arrows">
+            </div>
+            <figcaption class="plate-caption" data-i18n="step2Cap">FIG. 02 — PICK TOP &amp; BOTTOM SUBTITLE LANGUAGES</figcaption>
+          </figure>
+          <div class="story-copy">
+            <div class="step-seal-row">
+              <svg class="step-seal-svg" viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="20" r="18" fill="#2F55A4"/>
+                <text x="20" y="25" text-anchor="middle" fill="#FBF7EC" font-family="Georgia, serif" font-size="16" font-weight="700">02</text>
+              </svg>
+              <span class="step-badge-text">STEP 02</span>
+            </div>
+            <h3 data-i18n="step2VisualTitle">2. Choose any 2 languages to pair</h3>
+            <p data-i18n="step2VisualBody">Select which language sits on top and which appears in soft blue below. Flip top and bottom anytime with one click.</p>
           </div>
-          <div class="progress-text" id="progressText" data-i18n="progressIdle">Ready when you choose a supported folder.</div>
-        </div>
+        </article>
 
-        <div id="resultBox" class="result-box hidden" role="status" aria-live="polite">
-          <strong id="resultTitle"></strong>
-          <span id="resultBody"></span>
-        </div>
-      </article>
+        <!-- Row 3: plate left, text right -->
+        <article class="story-row">
+          <figure class="plate-figure">
+            <div class="plate-frame">
+              <img src="./illustrations/step-3-folder.png" width="960" height="720" decoding="async" alt="Warm ochre cut-paper game folder holding clean sheets and protected by a mint checkmark rosette seal">
+            </div>
+            <figcaption class="plate-caption" data-i18n="step3Cap">FIG. 03 — PICK THE GAME FOLDER &amp; APPLY WITH AUTO-BACKUP</figcaption>
+          </figure>
+          <div class="story-copy">
+            <div class="step-seal-row">
+              <svg class="step-seal-svg" viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="20" r="18" fill="#1E6150"/>
+                <text x="20" y="25" text-anchor="middle" fill="#FBF7EC" font-family="Georgia, serif" font-size="16" font-weight="700">03</text>
+              </svg>
+              <span class="step-badge-text">STEP 03</span>
+            </div>
+            <h3 data-i18n="step3VisualTitle">3. Pick your game folder and click Apply</h3>
+            <p data-i18n="step3VisualBody">In Steam, right-click Psycho-Sleuth -&gt; Manage -&gt; Browse local files. Select that folder below and click Apply Dual Subtitles — clean originals are backed up automatically first.</p>
+          </div>
+        </article>
+
+        <!-- Row 4: flipped on desktop -> text left, plate right -->
+        <article class="story-row is-flipped">
+          <figure class="plate-figure">
+            <div class="plate-frame">
+              <img src="./illustrations/step-4-play.png" width="960" height="720" decoding="async" alt="Framed moonlit clocktower scene displaying twin primary cream and secondary mint subtitle tracks beside a coral rewind button">
+            </div>
+            <figcaption class="plate-caption" data-i18n="step4Cap">FIG. 04 — PLAY IMMEDIATELY &amp; RESTORE WITH ONE CLICK ANYTIME</figcaption>
+          </figure>
+          <div class="story-copy">
+            <div class="step-seal-row">
+              <svg class="step-seal-svg" viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="20" r="18" fill="#B53E2A"/>
+                <text x="20" y="25" text-anchor="middle" fill="#FBF7EC" font-family="Georgia, serif" font-size="16" font-weight="700">04</text>
+              </svg>
+              <span class="step-badge-text">STEP 04</span>
+            </div>
+            <h3 data-i18n="step4VisualTitle">4. Launch &amp; play — 1-click restore anytime</h3>
+            <p data-i18n="step4VisualBody">Open the game and set the text language to Japanese or Traditional Chinese. Want vanilla back? Revisit this page with the game closed and click Restore.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="story-bridge">
+        <a class="btn btn-primary" href="#patcher" data-i18n="stepsReadyCta">Got it — take me to the Web Patcher</a>
+      </div>
     </section>
 
-    <h2 class="section-title" data-i18n="trustHeading">Why Players Trust This Web Patcher</h2>
-    <section class="trust-grid">
-      <div class="trust-card">
-        <h3 data-i18n="trust1Title">0 Bytes Uploaded</h3>
-        <p data-i18n="trust1Body">100% pure local JavaScript inside your browser tab. Disconnect from Wi-Fi after loading and it still works.</p>
+    <!-- Section 2: Interactive 1-Click Local Web Patcher Workbench -->
+    <section id="patcher" class="section-block" aria-labelledby="patcherHeading">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="patcherEyebrow">100% LOCAL WEB PATCHER</div>
+        <h2 class="section-title" id="patcherHeading" data-i18n="patcherHeading">Install or Restore Right Here</h2>
+        <p class="section-lead" data-i18n="patcherLead">Pick your 2 languages, choose the Psycho-Sleuth folder, and click Apply.</p>
       </div>
-      <div class="trust-card">
-        <h3 data-i18n="trust2Title">Zero CMD / Zero SmartScreen</h3>
-        <p data-i18n="trust2Body">No .cmd, .ps1, or unsigned .exe to trigger terrifying black windows or Windows Smart App Control blocks.</p>
+
+      <div id="browserWarning" class="notice-banner hidden" role="status">
+        <div>
+          <h3 data-i18n="unsupportedBrowserTitle">Please open this page in Microsoft Edge or Google Chrome</h3>
+          <p data-i18n="unsupportedBrowserBody">Local folder patching needs Edge or Chrome on Windows 10/11. Your files never leave your computer.</p>
+        </div>
+        <div class="notice-actions">
+          <button type="button" class="btn btn-cyan" id="copyUrlBtn" data-i18n="copyUrlBtn">Copy Page URL</button>
+          <a class="btn btn-secondary" href="https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1" target="_blank" rel="noopener" data-i18n="offlineFallbackLink">Or get Offline ZIP (advanced)</a>
+        </div>
       </div>
-      <div class="trust-card">
-        <h3 data-i18n="trust3Title">Fail-Closed SHA-256 Checks</h3>
-        <p data-i18n="trust3Body">Refuses unknown builds, other mods, or mid-update Steam files before changing a single byte.</p>
-      </div>
-      <div class="trust-card">
-        <h3 data-i18n="trust4Title">100% Restore Compatible</h3>
-        <p data-i18n="trust4Body">Uses the exact same .psycho-sleuth-subtitles/ backup folder — interoperable with Restore.cmd and Steam Verify.</p>
+
+      <div class="wizard-grid" aria-label="Dual-subtitle installation steps">
+        <!-- Step 1 -->
+        <article class="step-card step-1">
+          <h3 data-i18n="step1Title">1. Pick Top &amp; Bottom Languages</h3>
+          <p class="step-hint" data-i18n="step1Hint">Choose your main top line and secondary learning line below.</p>
+
+          <div class="field">
+            <label for="topSelect" data-i18n="labelTop">Top Line (Primary)</label>
+            <select id="topSelect" class="lang-select">
+              <option value="en">1 · English</option>
+              <option value="ja" selected>2 · 日本語 (Japanese)</option>
+              <option value="zh-Hant">3 · 繁體中文</option>
+              <option value="zh-Hans">4 · 简体中文</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="bottomSelect" data-i18n="labelBottom">Bottom Line (Learning)</label>
+            <select id="bottomSelect" class="lang-select">
+              <option value="en">1 · English</option>
+              <option value="ja">2 · 日本語 (Japanese)</option>
+              <option value="zh-Hant" selected>3 · 繁體中文</option>
+              <option value="zh-Hans">4 · 简体中文</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn btn-secondary" id="swapBtn">
+            <span aria-hidden="true">⇄</span>
+            <span data-i18n="swapBtn">Swap Top / Bottom</span>
+          </button>
+
+          <div class="preset-row">
+            <span class="preset-label" data-i18n="presetsLabel">Quick presets:</span>
+            <button type="button" class="chip-btn" data-preset="ja-zh-Hant" data-i18n="presetJaZhHant">JA + 繁中</button>
+            <button type="button" class="chip-btn" data-preset="ja-en" data-i18n="presetJaEn">JA + EN</button>
+            <button type="button" class="chip-btn" data-preset="en-zh-Hant" data-i18n="presetEnZhHant">EN + 繁中</button>
+            <button type="button" class="chip-btn" data-preset="ja-zh-Hans" data-i18n="presetJaZhHans">JA + 简中</button>
+          </div>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="step-card step-2">
+          <h3 data-i18n="step2Title">2. Select Game Folder</h3>
+          <p class="step-hint" data-i18n="step2Hint">Close the game first, then pick your Psycho-Sleuth Steam folder.</p>
+
+          <button type="button" class="btn btn-cyan" id="pickDirBtn">
+            <span id="pickDirLabel" data-i18n="pickFolderBtn">Choose Psycho-Sleuth Folder</span>
+          </button>
+
+          <details class="helper-tip">
+            <summary data-i18n="howToFindTitle">Where do I find that folder?</summary>
+            <p data-i18n="howToFindBody">Steam Library -&gt; Right-click Psycho-Sleuth -&gt; Manage -&gt; Browse local files. That opens the folder to pick above. Click "Edit files" when Edge or Chrome asks.</p>
+          </details>
+
+          <div class="status-panel" id="folderStatusPanel">
+            <div class="status-line" id="folderStatusEmpty" data-i18n="folderNone">No folder chosen yet.</div>
+            <div id="folderStatusDetails" class="hidden">
+              <div class="status-badge" id="folderStatusBadge">-</div>
+              <div class="status-line" id="folderNameLine">-</div>
+              <div class="status-line" id="buildIdLine">-</div>
+              <div class="status-line" id="runtimeCheckLine">-</div>
+              <div class="status-line" id="backupCheckLine">-</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="step-card step-3">
+          <h3 data-i18n="step3Title">3. Apply or Restore</h3>
+          <p class="step-hint" data-i18n="step3Hint">Clean originals stay backed up inside the game folder so you can restore anytime.</p>
+
+          <button type="button" class="btn btn-primary" id="applyBtn" disabled>
+            <span id="applyBtnLabel" data-i18n="applyBtn">Apply Dual Subtitles</span>
+          </button>
+
+          <button type="button" class="btn btn-restore" id="restoreBtn" disabled>
+            <span aria-hidden="true">↩</span>
+            <span data-i18n="restoreBtn">Restore Original Game</span>
+          </button>
+
+          <div class="progress-wrap">
+            <div class="progress-track">
+              <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text" id="progressText" data-i18n="progressIdle">Waiting for you to pick your game folder.</div>
+          </div>
+
+          <div id="resultBox" class="result-box hidden" role="status" aria-live="polite">
+            <strong id="resultTitle"></strong>
+            <span id="resultBody"></span>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="faq-card">
-      <h2 class="section-title" style="margin-top:0" data-i18n="faqHeading">Good to Know (Scope &amp; Preview Status)</h2>
-      <ul class="faq-list">
-        <li data-i18n="faq1">Covers story dialogue, choices, localization tables, and 22 cutscene .srt files while preserving all 157k+ voice cues. Menus and character names keep your in-game UI language.</li>
-        <li data-i18n="faq2">Note: the official prologue cutscene lacks a built-in Traditional Chinese .srt, so pairs using 繁體中文 show only the other chosen language during that opening video.</li>
-        <li data-i18n="faq3">Supported Steam builds: Build 26746656 (Nov 20, 2026) and Build 26481838 (Nov 10, 2026). All 12 orders pass automated byte-parity verification; full in-game visual check across long lines is still in preview — keep in-game text language on 繁體中文 or 日本語 for now.</li>
-      </ul>
+    <!-- Section 3: Reassurance, Pairs Table & On-Demand Tech Details -->
+    <section id="safety" class="section-block" aria-labelledby="trustHeading">
+      <div class="section-header">
+        <h2 class="section-title" id="trustHeading" data-i18n="trustHeading">Why Players Love This Simple Method</h2>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h3 data-i18n="trust1Title">Nothing Leaves Your PC</h3>
+          <p data-i18n="trust1Body">100% pure local browser code. You can even turn off Wi-Fi after loading the page and it still works.</p>
+        </div>
+        <div class="trust-card">
+          <h3 data-i18n="trust2Title">No Scary Black Windows</h3>
+          <p data-i18n="trust2Body">No .cmd scripts or unknown .exe downloads, so Windows SmartScreen never gets in your way.</p>
+        </div>
+        <div class="trust-card">
+          <h3 data-i18n="trust3Title">Safe Backup Included</h3>
+          <p data-i18n="trust3Body">Never touches your saves, checks game version hashes before writing, and restores byte-for-byte with one click.</p>
+        </div>
+      </div>
+
+      <div class="pairs-card">
+        <h3 data-i18n="pairsSummaryHeading">All 6 Official Pairs (12 Top/Bottom Orders)</h3>
+        <table class="pairs-table">
+          <thead>
+            <tr>
+              <th data-i18n="pairsColPair">Languages</th>
+              <th data-i18n="pairsColMeaning">What It Does</th>
+              <th data-i18n="pairsColCli">Preset Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>English + 日本語</td><td data-i18n="pairRow1">English &lt;-&gt; Japanese (great for English/Japanese learners)</td><td><code>en-ja</code> / <code>ja-en</code></td></tr>
+            <tr><td>English + 繁體中文</td><td data-i18n="pairRow2">English &lt;-&gt; Official Traditional Chinese</td><td><code>en-zh-Hant</code> / <code>zh-Hant-en</code></td></tr>
+            <tr><td>English + 简体中文</td><td data-i18n="pairRow3">English &lt;-&gt; Official Simplified Chinese</td><td><code>en-zh-Hans</code> / <code>zh-Hans-en</code></td></tr>
+            <tr><td>日本語 + 繁體中文</td><td data-i18n="pairRow4">Japanese &lt;-&gt; Official Traditional Chinese</td><td><code>ja-zh-Hant</code> / <code>zh-Hant-ja</code></td></tr>
+            <tr><td>日本語 + 简体中文</td><td data-i18n="pairRow5">Japanese &lt;-&gt; Official Simplified Chinese</td><td><code>ja-zh-Hans</code> / <code>zh-Hans-ja</code></td></tr>
+            <tr><td>繁體中文 + 简体中文</td><td data-i18n="pairRow6">Official Traditional &lt;-&gt; Official Simplified Chinese</td><td><code>zh-Hant-zh-Hans</code> / <code>zh-Hans-zh-Hant</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <details class="tech-disclosure">
+        <summary data-i18n="techSummaryLabel">Technical details, Steam build support &amp; preview notes (for curious players)</summary>
+        <ul class="faq-list">
+          <li data-i18n="faq1">Covers main story dialogue, choices, localization tables, and 22 cutscene .srt tracks while keeping every voice line and click cue intact.</li>
+          <li data-i18n="faq2">Note: the original game lacks an official Traditional Chinese .srt for the opening prologue video, so pairs using Traditional Chinese show only the other chosen language during that opening cutscene.</li>
+          <li data-i18n="faq3">Supported Steam builds: Build 26746656 (Nov 20, 2026) and Build 26481838 (Nov 10, 2026). All 12 orders pass automated byte-parity verification against Python output; full playthrough visual checks are still in preview — keep in-game text language on Traditional Chinese or Japanese.</li>
+          <li data-i18n="faq4">Compatible with Offline ZIP (v0.2.0-preview.1): both share the same .psycho-sleuth-subtitles/original backup directory and Restore.cmd works seamlessly.</li>
+        </ul>
+      </details>
     </section>
 
     <footer class="site-footer">
-      <span data-i18n="footerUnofficial">Unofficial fan tool under free-use personal LICENSE. Requires legitimately purchased Steam Psycho-Sleuth. No game assets or scripts included.</span>
+      <span data-i18n="footerUnofficial">Unofficial free fan tool (see LICENSE). Requires legitimately owned Steam Psycho-Sleuth. No game assets included.</span>
       <div class="footer-links">
         <a href="https://github.com/snowyukitty/psycho-sleuth-subtitles" target="_blank" rel="noopener">GitHub</a>
         <a href="https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1" target="_blank" rel="noopener" data-i18n="footerLinks">Offline ZIP (v0.2.0-preview.1)</a>
-        <a href="https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/SUPPORT.md" target="_blank" rel="noopener" data-i18n="footerSupport">Troubleshooting &amp; Issues</a>
+        <a href="https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/SUPPORT.md" target="_blank" rel="noopener" data-i18n="footerSupport">Help &amp; Issues</a>
         <a href="https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/LICENSE" target="_blank" rel="noopener">LICENSE</a>
       </div>
     </footer>

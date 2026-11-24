@@ -9,7 +9,7 @@ const UI_LANGS = ['en', 'ja', 'zh-Hant', 'zh-Hans'];
 
 const state = {
   uiLang: 'en',
-  theme: 'dark',
+  theme: 'light',
   previewMode: 'dialogue',
   top: 'ja',
   bottom: 'zh-Hant',
@@ -51,7 +51,7 @@ function detectTheme() {
   } catch {
     // ignore storage restriction
   }
-  return 'dark';
+  return 'light';
 }
 
 function t(key) {
@@ -63,7 +63,7 @@ function applyTheme(theme) {
   state.theme = theme;
   document.documentElement.setAttribute('data-theme', theme);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f8fc' : '#0b0f17');
+  if (meta) meta.setAttribute('content', theme === 'dark' ? '#131A2B' : '#F6EEDC');
   try {
     localStorage.setItem('ps-sub-theme', theme);
   } catch {

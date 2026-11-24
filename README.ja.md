@@ -13,7 +13,7 @@
 
 <br>
 
-**[🚀 ブラウザ Web パッチャーを開く（黒い画面なし・最新 Build 26746656 対応）](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)**
+**[🎨 4ステップ図解＆ブラウザ Web パッチャーを開く（黒い画面なし・Build 26746656 対応）](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)**
 
 **[オフライン ZIP 版 (`v0.2.0-preview.1`)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[リリースノート & SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[リリース一覧](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
 
@@ -41,15 +41,16 @@ Steam 版 ***Psycho-Sleuth*（病能探偵 / 異病偵探 / 异病侦探）** �
 
 ---
 
-## 方法 1 — ブラウザ Web パッチャー（一番簡単・CMD不要）
+## 方法 1 — イラスト図解つきブラウザ Web パッチャー（推奨・CMD不要）
 
-1. Steam 版の *Psycho-Sleuth* を**完全に終了**します。
-2. **Microsoft Edge** または **Google Chrome** で **[https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)** を開きます。
-3. **上段言語**と**下段言語**を選びます（右側のライブプレビューで見た目をすぐ確認できます）。
-4. **Psycho-Sleuth フォルダーを選択** をクリック（Steam でゲームを右クリック → 管理 → ローカルファイルを閲覧 でパス確認）し、編集許可を出してから **二言語字幕を適用する** を押します。
-5. Steam からゲームを起動し、ゲーム内テキスト言語を **「日本語」** または **「繁體中文」** にすると二言語字幕が表示されます。
+> イラスト付きのわかりやすい手順は **[https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)** を **Edge** または **Chrome** で開いてご覧ください。
 
-*（元に戻すとき：ゲーム終了後に同じページを開いてフォルダーを選び、**元の状態に復元する** をクリックするか、ZIP 版の `Restore.cmd` を使います。）*
+1. **先にゲームを終了**して、Edge / Chrome で上記ページを開きます。
+2. **上段・下段の2言語を選ぶ**（上のライブプレビューですぐ確認できます）。
+3. **ゲームフォルダを選んで「適用」を押す**（Steam で右クリック → 管理 → ローカルファイルを閲覧 で確認し、「ファイルの編集」を許可するだけ。元のファイルは自動で安全退避されます）。
+4. **ゲームを起動**し、ゲーム内テキスト言語を **「日本語」** または **「繁體中文」** にすれば完了！
+
+*（元に戻すとき：ゲーム終了後に同じページを開いて **元の状態に復元する** を押すか、`Restore.cmd` を使います。）*
 
 ---
 

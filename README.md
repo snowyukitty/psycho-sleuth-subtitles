@@ -13,7 +13,7 @@
 
 <br>
 
-**[🚀 Launch Browser Web Patcher (Zero CMD · Build 26746656 & 26481838)](https://snowyukitty.github.io/psycho-sleuth-subtitles/)**
+**[🎨 Open Illustrated 4-Step Guide & Web Patcher (Zero CMD · Build 26746656 & 26481838)](https://snowyukitty.github.io/psycho-sleuth-subtitles/)**
 
 **[Download Offline ZIP (`v0.2.0-preview.1`)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[Release Notes & SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[All Releases](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
 
@@ -43,15 +43,16 @@ An unofficial **Windows x64** dual-subtitle tool for Steam's ***Psycho-Sleuth* (
 
 ---
 
-## Option 1 — Browser Web Patcher (Fastest, Zero CMD)
+## Option 1 — Illustrated 4-Step Web Patcher (Recommended, Zero CMD)
 
-1. **Close *Psycho-Sleuth*** completely in Steam.
-2. Open **[https://snowyukitty.github.io/psycho-sleuth-subtitles/](https://snowyukitty.github.io/psycho-sleuth-subtitles/)** in **Microsoft Edge** or **Google Chrome**.
-3. Pick your **Top** and **Bottom** languages and preview the dual-subtitle layout live.
-4. Click **Select Psycho-Sleuth Folder** (find it via Steam → Right-click *Psycho-Sleuth* → *Manage* → *Browse local files*), allow folder editing when prompted, then click **Apply Dual Subtitles**.
-5. Launch the game in Steam and set in-game text language to **Traditional Chinese (`繁體中文`)** or **Japanese (`日本語`)** — your selected dual subtitles display automatically.
+> Want picture instructions? Open **[https://snowyukitty.github.io/psycho-sleuth-subtitles/](https://snowyukitty.github.io/psycho-sleuth-subtitles/)** in **Microsoft Edge** or **Google Chrome** — everything runs locally in 4 steps:
 
-*(Want to return to vanilla? Close the game, revisit the page, select the folder again, and click **Restore Original Files** — or run `Restore.cmd` from the offline ZIP.)*
+1. **Close *Psycho-Sleuth*** completely, and keep the Web Patcher open in Edge or Chrome.
+2. **Pick your 2 languages** (Top line + Bottom clue-blue line, previewed live on screen).
+3. **Pick your game folder & click Apply** (find it in Steam → Right-click game → *Manage* → *Browse local files*; allow *"Edit files"* when prompted — clean originals are auto-backed up first).
+4. **Launch the game** and set in-game text language to **Traditional Chinese (`繁體中文`)** or **Japanese (`日本語`)**!
+
+*(Need vanilla back? Close the game, revisit the page, pick the folder again, and click **Restore Original Game** — or use `Restore.cmd`.)*
 
 ---
 

@@ -13,7 +13,7 @@
 
 <br>
 
-**[🚀 開啟網頁一鍵安裝器（免開黑窗 CMD · 支援最新 Build 26746656）](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant)**
+**[🎨 開啟 4 步插畫圖解＆網頁一鍵安裝器（免開黑窗 · 支援最新 Build 26746656）](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant)**
 
 **[下載離線 ZIP 版 (`v0.2.0-preview.1`)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[版本說明與 SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[所有版本](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
 
@@ -41,15 +41,16 @@
 
 ---
 
-## 方式 1 — 網頁版一鍵安裝（最推薦，免 CMD 黑窗）
+## 方式 1 — 圖文並茂網頁版一鍵安裝（最簡單・免黑窗）
 
-1. 在 Steam **完全關閉**《異病偵探 Psycho-Sleuth》。
-2. 用 Windows 內建的 **Microsoft Edge** 或 **Google Chrome** 打開：**[https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant)**。
-3. 選擇**上方字幕**與**下方字幕**（可在畫面右側即時預覽對話框與過場效果）。
-4. 點選 **選擇 Psycho-Sleuth 遊戲資料夾**（可在 Steam 右鍵遊戲 → 管理 → 瀏覽本機檔案找到路徑），在瀏覽器詢問權限時按「允許編輯檔案」，再按 **套用雙語字幕**。
-5. 回 Steam 啟動遊戲，把遊戲內文字語言設為 **「繁體中文」** 或 **「日文」**，對話就會自動顯示你選好的雙語字幕。
+> 看圖跟著做更輕鬆！用 Windows 內建的 **Edge** 或 **Chrome** 打開：**[https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant)**
 
-*（想改回原版：關閉遊戲後重開該網頁選同一個資料夾，點 **還原乾淨原版** 即可；也能用離線包的 `Restore.cmd` 還原。）*
+1. **先把遊戲關掉**，用 Edge 或 Chrome 打開上面這個網頁。
+2. **挑兩種想看的語言**（上面主字幕 + 下面輔助字幕，畫面上會直接預覽給你看）。
+3. **選遊戲資料夾，按「套用」**（在 Steam 右鍵遊戲 → 管理 → 瀏覽本機檔案看位置；瀏覽器問權限時按「允許編輯檔案」，套用前會先自動幫你備份乾淨原版）。
+4. **開遊戲就能玩！** 進遊戲把文字語言選成 **「繁體中文」** 或 **「日文」** 就會自動顯示雙語字幕。
+
+*（想改回原版：關掉遊戲重開同一頁，點 **還原回乾淨原版** 或用離線 `Restore.cmd` 就恢復了。）*
 
 ---
 
