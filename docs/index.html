@@ -65,6 +65,7 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="fonts/fontaste-portal.css">
   <link rel="stylesheet" href="patcher/styles.css">
 </head>
 <body>
@@ -84,10 +85,10 @@
       </nav>
       <div class="nav-controls">
         <div class="lang-group" role="group" aria-label="Interface language">
-          <button type="button" class="lang-pill" data-ui-lang="en">EN</button>
-          <button type="button" class="lang-pill" data-ui-lang="ja">日本語</button>
-          <button type="button" class="lang-pill" data-ui-lang="zh-Hant">繁體</button>
-          <button type="button" class="lang-pill" data-ui-lang="zh-Hans">简体</button>
+          <button type="button" class="lang-pill" lang="en" data-ui-lang="en">EN</button>
+          <button type="button" class="lang-pill" lang="ja" data-ui-lang="ja">日本語</button>
+          <button type="button" class="lang-pill" lang="zh-Hant" data-ui-lang="zh-Hant">繁體</button>
+          <button type="button" class="lang-pill" lang="zh-Hans" data-ui-lang="zh-Hans">简体</button>
         </div>
         <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle color theme">
           <span id="themeIcon" aria-hidden="true">☾</span>
@@ -132,8 +133,8 @@
             <span class="pair-chip" id="previewPairBadge">日本語 → 繁體中文</span>
           </div>
           <div class="dialogue-box" id="previewDialogueBox">
-            <div class="line-top" id="previewLineTop">時計塔の下にある破れた事件簿をもう一度確認しよう。</div>
-            <div class="line-bottom" id="previewLineBottom">再確認一次鐘樓下方那本被撕破的案件簿吧。</div>
+            <div class="line-top" id="previewLineTop" lang="ja">時計塔の下にある破れた事件簿をもう一度確認しよう。</div>
+            <div class="line-bottom" id="previewLineBottom" lang="zh-Hant">再確認一次鐘樓下方那本被撕破的案件簿吧。</div>
           </div>
           <div class="stage-quick-bar" aria-label="Quick subtitle pair preview switcher">
             <button type="button" class="chip-btn" data-preset="ja-zh-Hant" data-i18n="presetJaZhHant">JA + 繁中</button>
@@ -160,7 +161,7 @@
 
       <div id="envDetectBanner" class="env-banner is-supported" role="status">
         <span class="env-msg">
-          <span class="env-dot" aria-hidden="true"></span>
+          <span class="env-glyph" id="envDetectGlyph" aria-hidden="true">✓</span>
           <span id="envDetectText" data-i18n="envSupportedMsg">Great news: your browser supports direct 1-click local patching! Use the Web Patcher below — nothing to download.</span>
         </span>
         <button type="button" class="btn btn-secondary hidden" data-copy-url="true" data-i18n="copyUrlBtn">Copy Page URL</button>
@@ -247,8 +248,9 @@
           <div class="story-copy">
             <div class="step-seal-row">
               <svg class="step-seal-svg" viewBox="0 0 40 40" aria-hidden="true">
-                <circle cx="20" cy="20" r="18" fill="#E25B45"/>
-                <text x="20" y="25" text-anchor="middle" fill="#FBF7EC" font-family="Georgia, serif" font-size="16" font-weight="700">01</text>
+                <circle class="seal-outer" cx="20" cy="20" r="18" fill="none" stroke-width="1.75"/>
+                <circle class="seal-inner" cx="20" cy="20" r="14.5" fill="none" stroke-width="0.9"/>
+                <text class="seal-num" x="20" y="25" text-anchor="middle" font-size="14">01</text>
               </svg>
               <span class="step-badge-text">STEP 01</span>
             </div>
@@ -268,8 +270,9 @@
           <div class="story-copy">
             <div class="step-seal-row">
               <svg class="step-seal-svg" viewBox="0 0 40 40" aria-hidden="true">
-                <circle cx="20" cy="20" r="18" fill="#2F55A4"/>
-                <text x="20" y="25" text-anchor="middle" fill="#FBF7EC" font-family="Georgia, serif" font-size="16" font-weight="700">02</text>
+                <circle class="seal-outer" cx="20" cy="20" r="18" fill="none" stroke-width="1.75"/>
+                <circle class="seal-inner" cx="20" cy="20" r="14.5" fill="none" stroke-width="0.9"/>
+                <text class="seal-num" x="20" y="25" text-anchor="middle" font-size="14">02</text>
               </svg>
               <span class="step-badge-text">STEP 02</span>
             </div>
@@ -289,8 +292,9 @@
           <div class="story-copy">
             <div class="step-seal-row">
               <svg class="step-seal-svg" viewBox="0 0 40 40" aria-hidden="true">
-                <circle cx="20" cy="20" r="18" fill="#1E6150"/>
-                <text x="20" y="25" text-anchor="middle" fill="#FBF7EC" font-family="Georgia, serif" font-size="16" font-weight="700">03</text>
+                <circle class="seal-outer" cx="20" cy="20" r="18" fill="none" stroke-width="1.75"/>
+                <circle class="seal-inner" cx="20" cy="20" r="14.5" fill="none" stroke-width="0.9"/>
+                <text class="seal-num" x="20" y="25" text-anchor="middle" font-size="14">03</text>
               </svg>
               <span class="step-badge-text">STEP 03</span>
             </div>
@@ -310,8 +314,9 @@
           <div class="story-copy">
             <div class="step-seal-row">
               <svg class="step-seal-svg" viewBox="0 0 40 40" aria-hidden="true">
-                <circle cx="20" cy="20" r="18" fill="#B53E2A"/>
-                <text x="20" y="25" text-anchor="middle" fill="#FBF7EC" font-family="Georgia, serif" font-size="16" font-weight="700">04</text>
+                <circle class="seal-outer" cx="20" cy="20" r="18" fill="none" stroke-width="1.75"/>
+                <circle class="seal-inner" cx="20" cy="20" r="14.5" fill="none" stroke-width="0.9"/>
+                <text class="seal-num" x="20" y="25" text-anchor="middle" font-size="14">04</text>
               </svg>
               <span class="step-badge-text">STEP 04</span>
             </div>
@@ -348,6 +353,7 @@
       <div class="wizard-grid" aria-label="Dual-subtitle installation steps">
         <!-- Step 1 -->
         <article class="step-card step-1">
+          <span class="step-card-num" aria-hidden="true">01</span>
           <h3 data-i18n="step1Title">1. Pick Top &amp; Bottom Languages</h3>
           <p class="step-hint" data-i18n="step1Hint">Choose your main top line and secondary learning line below.</p>
 
@@ -387,6 +393,7 @@
 
         <!-- Step 2 -->
         <article class="step-card step-2">
+          <span class="step-card-num" aria-hidden="true">02</span>
           <h3 data-i18n="step2Title">2. Select Game Folder</h3>
           <p class="step-hint" data-i18n="step2Hint">Close the game first, then pick your Psycho-Sleuth Steam folder.</p>
 
@@ -417,6 +424,7 @@
 
         <!-- Step 3 -->
         <article class="step-card step-3">
+          <span class="step-card-num" aria-hidden="true">03</span>
           <h3 data-i18n="step3Title">3. Apply or Restore</h3>
           <p class="step-hint" data-i18n="step3Hint">Clean originals stay backed up inside the game folder so you can restore anytime.</p>
 
@@ -478,12 +486,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>English + 日本語</td><td data-i18n="pairRow1">English &lt;-&gt; Japanese (great for English/Japanese learners)</td><td><code>en-ja</code> / <code>ja-en</code></td></tr>
-            <tr><td>English + 繁體中文</td><td data-i18n="pairRow2">English &lt;-&gt; Official Traditional Chinese</td><td><code>en-zh-Hant</code> / <code>zh-Hant-en</code></td></tr>
-            <tr><td>English + 简体中文</td><td data-i18n="pairRow3">English &lt;-&gt; Official Simplified Chinese</td><td><code>en-zh-Hans</code> / <code>zh-Hans-en</code></td></tr>
-            <tr><td>日本語 + 繁體中文</td><td data-i18n="pairRow4">Japanese &lt;-&gt; Official Traditional Chinese</td><td><code>ja-zh-Hant</code> / <code>zh-Hant-ja</code></td></tr>
-            <tr><td>日本語 + 简体中文</td><td data-i18n="pairRow5">Japanese &lt;-&gt; Official Simplified Chinese</td><td><code>ja-zh-Hans</code> / <code>zh-Hans-ja</code></td></tr>
-            <tr><td>繁體中文 + 简体中文</td><td data-i18n="pairRow6">Official Traditional &lt;-&gt; Official Simplified Chinese</td><td><code>zh-Hant-zh-Hans</code> / <code>zh-Hans-zh-Hant</code></td></tr>
+            <tr><td>English + <span lang="ja">日本語</span></td><td data-i18n="pairRow1">English &lt;-&gt; Japanese (great for English/Japanese learners)</td><td><code>en-ja</code> / <code>ja-en</code></td></tr>
+            <tr><td>English + <span lang="zh-Hant">繁體中文</span></td><td data-i18n="pairRow2">English &lt;-&gt; Official Traditional Chinese</td><td><code>en-zh-Hant</code> / <code>zh-Hant-en</code></td></tr>
+            <tr><td>English + <span lang="zh-Hans">简体中文</span></td><td data-i18n="pairRow3">English &lt;-&gt; Official Simplified Chinese</td><td><code>en-zh-Hans</code> / <code>zh-Hans-en</code></td></tr>
+            <tr><td><span lang="ja">日本語</span> + <span lang="zh-Hant">繁體中文</span></td><td data-i18n="pairRow4">Japanese &lt;-&gt; Official Traditional Chinese</td><td><code>ja-zh-Hant</code> / <code>zh-Hant-ja</code></td></tr>
+            <tr><td><span lang="ja">日本語</span> + <span lang="zh-Hans">简体中文</span></td><td data-i18n="pairRow5">Japanese &lt;-&gt; Official Simplified Chinese</td><td><code>ja-zh-Hans</code> / <code>zh-Hans-ja</code></td></tr>
+            <tr><td><span lang="zh-Hant">繁體中文</span> + <span lang="zh-Hans">简体中文</span></td><td data-i18n="pairRow6">Official Traditional &lt;-&gt; Official Simplified Chinese</td><td><code>zh-Hant-zh-Hans</code> / <code>zh-Hans-zh-Hant</code></td></tr>
           </tbody>
         </table>
       </div>

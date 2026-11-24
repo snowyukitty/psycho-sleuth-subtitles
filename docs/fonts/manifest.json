@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "kitVersion": "0.3.0",
+  "portalFontProfile": "source-serif-4 + noto-serif-cjk-bold + public-sans + jetbrains-mono",
+  "totalBytes": 1503384,
+  "files": [
+    {
+      "path": "SourceSerif4-opsz-wght.woff2",
+      "family": "Source Serif 4",
+      "delivery": "wrap",
+      "weight": "200 900",
+      "license": "OFL-1.1",
+      "bytes": 427556,
+      "sha256": "4453d73855919eb67a8291bf2bad07782ecaf8af0e4e363d58948ff993209d51"
+    },
+    {
+      "path": "PublicSans-wght.woff2",
+      "family": "Public Sans",
+      "delivery": "wrap",
+      "weight": "100 900",
+      "license": "OFL-1.1",
+      "bytes": 42044,
+      "sha256": "82d45c7f758c7dea4e97ebe7edcee6feebc595d9f4a2aa9d7f2b8f4aca9a98ca"
+    },
+    {
+      "path": "JetBrainsMono-Regular.woff2",
+      "family": "JetBrains Mono",
+      "delivery": "wrap",
+      "weight": "400",
+      "license": "OFL-1.1",
+      "bytes": 92164,
+      "sha256": "a9cb1cd82332b23a47e3a1239d25d13c86d16c4220695e34b243effa999f45f2"
+    },
+    {
+      "path": "JetBrainsMono-Medium.woff2",
+      "family": "JetBrains Mono",
+      "delivery": "wrap",
+      "weight": "500",
+      "license": "OFL-1.1",
+      "bytes": 93824,
+      "sha256": "086c48dfbea9ddaff1320f7e09399b8e2924e88ce67453721255db3bdbb5a353"
+    },
+    {
+      "path": "NotoSerifTC-Bold-subset.woff2",
+      "family": "Noto Serif TC",
+      "delivery": "instance-700-subset",
+      "weight": "700",
+      "license": "OFL-1.1",
+      "bytes": 266768,
+      "sha256": "df9e5baed97d049cea8d24d28fdafe7d750b1677fe77c11aa128846e43136bdd"
+    },
+    {
+      "path": "NotoSerifSC-Bold-subset.woff2",
+      "family": "Noto Serif SC",
+      "delivery": "instance-700-subset",
+      "weight": "700",
+      "license": "OFL-1.1",
+      "bytes": 290836,
+      "sha256": "422cdddcd860eedb099d445a7eb6059c1982bbe10824db34c8f3d6ece121cb2a"
+    },
+    {
+      "path": "NotoSerifJP-Bold-subset.woff2",
+      "family": "Noto Serif JP",
+      "delivery": "instance-700-subset",
+      "weight": "700",
+      "license": "OFL-1.1",
+      "bytes": 290192,
+      "sha256": "0e445a965137f488424ce0b68f6b9d22d83d83554ccd51f4da641611d16f7f64"
+    }
+  ],
+  "licenses": [
+    "jetbrains-mono-OFL.txt",
+    "noto-serif-jp-OFL.txt",
+    "noto-serif-sc-OFL.txt",
+    "noto-serif-tc-OFL.txt",
+    "public-sans-OFL.txt",
+    "source-serif-4-OFL.txt"
+  ]
+}

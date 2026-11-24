@@ -63,7 +63,7 @@ function applyTheme(theme) {
   state.theme = theme;
   document.documentElement.setAttribute('data-theme', theme);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', theme === 'dark' ? '#131A2B' : '#F6EEDC');
+  if (meta) meta.setAttribute('content', theme === 'dark' ? '#16120E' : '#F6EEDC');
   try {
     localStorage.setItem('ps-sub-theme', theme);
   } catch {
@@ -87,10 +87,12 @@ const GUIDE_URLS = {
 function renderEnvBanner() {
   const banner = $('envDetectBanner');
   const msgEl = $('envDetectText');
+  const glyphEl = $('envDetectGlyph');
   if (!banner || !msgEl) return;
   const supported = 'showDirectoryPicker' in window;
   banner.classList.toggle('is-supported', supported);
   banner.classList.toggle('is-unsupported', !supported);
+  if (glyphEl) glyphEl.textContent = supported ? '✓' : '⚠';
   msgEl.textContent = t(supported ? 'envSupportedMsg' : 'envUnsupportedMsg');
   const inlineCopy = banner.querySelector('[data-copy-url]');
   if (inlineCopy) inlineCopy.classList.toggle('hidden', supported);
@@ -149,8 +151,12 @@ function renderPreview() {
   const box = $('previewDialogueBox');
   box.classList.toggle('is-cutscene', state.previewMode === 'cutscene');
   $('previewSpeaker').textContent = sample.speaker[state.uiLang] || sample.speaker.en;
-  $('previewLineTop').textContent = sample.lines[state.top];
-  $('previewLineBottom').textContent = sample.lines[state.bottom];
+  const topEl = $('previewLineTop');
+  const botEl = $('previewLineBottom');
+  topEl.lang = state.top;
+  topEl.textContent = sample.lines[state.top];
+  botEl.lang = state.bottom;
+  botEl.textContent = sample.lines[state.bottom];
   $('previewPairBadge').textContent = `${LANGUAGES[state.top].label} → ${LANGUAGES[state.bottom].label}`;
   $('previewPairCode').textContent = `${state.top}-${state.bottom}`;
 
