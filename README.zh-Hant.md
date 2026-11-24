@@ -13,7 +13,7 @@
 
 <br>
 
-**[🎨 開啟 4 步插畫圖解＆網頁一鍵安裝器（免開黑窗 · 支援最新 Build 26746656）](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant)**
+**[🌐 官方玩家入口網站 — 4 步插畫圖解、網頁安裝＆離線包直接下載](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=zh-Hant)**
 
 **[下載離線 ZIP 版 (`v0.2.0-preview.1`)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[版本說明與 SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[所有版本](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
 

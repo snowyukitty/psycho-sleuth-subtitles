@@ -13,7 +13,7 @@
 
 <br>
 
-**[🎨 4ステップ図解＆ブラウザ Web パッチャーを開く（黒い画面なし・Build 26746656 対応）](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)**
+**[🌐 公式プレイヤーポータル — 4ステップ図解・Webパッチャー・直接ダウンロード](https://snowyukitty.github.io/psycho-sleuth-subtitles/?lang=ja)**
 
 **[オフライン ZIP 版 (`v0.2.0-preview.1`)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[リリースノート & SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[リリース一覧](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
 

@@ -13,7 +13,7 @@
 
 <br>
 
-**[🎨 Open Illustrated 4-Step Guide & Web Patcher (Zero CMD · Build 26746656 & 26481838)](https://snowyukitty.github.io/psycho-sleuth-subtitles/)**
+**[🌐 Official Player Portal — 4-Step Picture Guide, Web Patcher & Direct Download Hub](https://snowyukitty.github.io/psycho-sleuth-subtitles/)**
 
 **[Download Offline ZIP (`v0.2.0-preview.1`)](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/download/v0.2.0-preview.1/Psycho-Sleuth-Subtitles-0.2.0-preview.1-Minimal.zip)** · **[Release Notes & SHA-256](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases/tag/v0.2.0-preview.1)** · **[All Releases](https://github.com/snowyukitty/psycho-sleuth-subtitles/releases)**
 

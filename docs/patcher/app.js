@@ -77,6 +77,53 @@ function applyTheme(theme) {
   }
 }
 
+const GUIDE_URLS = {
+  en: 'https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/docs/README.en.md',
+  ja: 'https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/docs/README.ja.md',
+  'zh-Hant': 'https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/docs/README.zh-Hant.md',
+  'zh-Hans': 'https://github.com/snowyukitty/psycho-sleuth-subtitles/blob/main/docs/README.zh-Hans.md',
+};
+
+function renderEnvBanner() {
+  const banner = $('envDetectBanner');
+  const msgEl = $('envDetectText');
+  if (!banner || !msgEl) return;
+  const supported = 'showDirectoryPicker' in window;
+  banner.classList.toggle('is-supported', supported);
+  banner.classList.toggle('is-unsupported', !supported);
+  msgEl.textContent = t(supported ? 'envSupportedMsg' : 'envUnsupportedMsg');
+  const inlineCopy = banner.querySelector('[data-copy-url]');
+  if (inlineCopy) inlineCopy.classList.toggle('hidden', supported);
+}
+
+async function copyTextWithFeedback(text, btn, defaultKey, copiedKey, fallbackEl = null) {
+  let ok = false;
+  try {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+      await navigator.clipboard.writeText(text);
+      ok = true;
+    }
+  } catch {
+    ok = false;
+  }
+  if (ok) {
+    if (fallbackEl) fallbackEl.classList.add('hidden');
+    if (btn) {
+      btn.textContent = t(copiedKey);
+      clearTimeout(btn._copyTimer);
+      btn._copyTimer = setTimeout(() => {
+        btn.textContent = t(defaultKey);
+      }, 2200);
+    }
+    return true;
+  }
+  if (fallbackEl) {
+    fallbackEl.textContent = text;
+    fallbackEl.classList.remove('hidden');
+  }
+  return false;
+}
+
 function renderI18n() {
   document.documentElement.lang = state.uiLang;
   document.querySelectorAll('[data-i18n]').forEach((el) => {
@@ -86,7 +133,12 @@ function renderI18n() {
   document.querySelectorAll('[data-ui-lang]').forEach((btn) => {
     btn.classList.toggle('active', btn.getAttribute('data-ui-lang') === state.uiLang);
   });
+  const guideLink = $('quickGuideLink');
+  if (guideLink) {
+    guideLink.href = GUIDE_URLS[state.uiLang] || GUIDE_URLS.en;
+  }
   applyTheme(state.theme);
+  renderEnvBanner();
   renderPreview();
   renderFolderStatus();
   updateButtons();
@@ -336,11 +388,16 @@ function init() {
     syncLangControls();
   });
 
-  $('swapBtn').addEventListener('click', () => {
+  function triggerSwap() {
     const oldTop = state.top;
     state.top = state.bottom;
     state.bottom = oldTop;
     syncLangControls();
+  }
+
+  $('swapBtn').addEventListener('click', triggerSwap);
+  document.querySelectorAll('[data-swap-trigger]').forEach((btn) => {
+    btn.addEventListener('click', triggerSwap);
   });
 
   document.querySelectorAll('[data-preset]').forEach((chip) => {
@@ -355,15 +412,26 @@ function init() {
     });
   });
 
-  $('copyUrlBtn').addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      $('copyUrlBtn').textContent = t('copiedUrlBtn');
-      setTimeout(() => { $('copyUrlBtn').textContent = t('copyUrlBtn'); }, 2000);
-    } catch {
-      // ignore clipboard restriction
-    }
+  document.querySelectorAll('[data-copy-url]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      copyTextWithFeedback(window.location.href, btn, 'copyUrlBtn', 'copiedUrlBtn');
+    });
   });
+
+  const copyShaBtn = $('copyShaBtn');
+  if (copyShaBtn) {
+    copyShaBtn.addEventListener('click', () => {
+      const sha = copyShaBtn.getAttribute('data-sha256') || '';
+      const okPromise = copyTextWithFeedback(sha, copyShaBtn, 'copyShaBtn', 'copiedShaBtn', $('shaFallbackBox'));
+      okPromise.then((ok) => {
+        const statusEl = $('copyShaStatus');
+        if (statusEl) {
+          statusEl.textContent = ok ? t('copiedShaBtn') : sha;
+          setTimeout(() => { statusEl.textContent = ''; }, 2400);
+        }
+      });
+    });
+  }
 
   $('pickDirBtn').addEventListener('click', handlePickDirectory);
   $('applyBtn').addEventListener('click', handleApply);
